@@ -14,9 +14,9 @@ class BlacklistedContentEvent
 
     protected string $maliciousContent;
 
-    private string $code = "BLACKLISTED_CONTENT";
+    private string $code = 'BLACKLISTED_CONTENT';
 
-    private string $severity = "severe";
+    private string $severity = 'severe';
 
     public function __construct(string $filename, string $maliciousContent)
     {

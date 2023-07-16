@@ -1,10 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
 class EncryptedUnique extends Rule
 {
     private string $modelClass;
+
     private string $fieldName;
 
     public function __construct(string $modelClass, string $fieldName)
@@ -25,15 +28,12 @@ class EncryptedUnique extends Rule
         return true;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         //$key = 'core::validation.unique';
         $key = 'validation.unique';
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

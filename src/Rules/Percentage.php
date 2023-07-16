@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -7,8 +9,8 @@ class Percentage extends Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -19,7 +21,7 @@ class Percentage extends Rule
             return false;
         }
 
-        $intValue = (int)$value;
+        $intValue = (int) $value;
 
         return $intValue >= 0 && $intValue <= 100;
     }

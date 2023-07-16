@@ -1,10 +1,11 @@
-<?php //declare(strict_types = 1);
+<?php
+
+//declare(strict_types = 1);
 
 namespace Yormy\ValidationLaravel\Rules\Support;
 
 class Iso6391Alpha3
 {
-
     /**
      * Array of countries with their ISO 639-1 alpha-3 codes.
      *

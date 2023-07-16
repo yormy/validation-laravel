@@ -12,9 +12,9 @@ class ExtensionInvalidEvent
 
     protected string $filename;
 
-    private string $code = "EXTENSION_INCONSISTENT";
+    private string $code = 'EXTENSION_INCONSISTENT';
 
-    private string $severity = "low";
+    private string $severity = 'low';
 
     public function __construct(string $filename)
     {

@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 /*
 Determine if the user is authorized to perform an ability on an instance of the given model.
 The id of the model is the field under validation
@@ -28,6 +30,7 @@ public function rules()
     ];
 }
 */
+
 namespace Yormy\ValidationLaravel\Rules;
 
 use Illuminate\Support\Facades\Auth;
@@ -37,7 +40,6 @@ use Illuminate\Support\Facades\Auth;
  * The id of the model is the field under validation
  * https://github.com/spatie/validation-laravel-rules
  * Class Authorized
- * @package Modules\Core\Rules
  */
 class Authorized extends Rule
 {
@@ -76,16 +78,13 @@ class Authorized extends Rule
         return $user->can($this->ability, $model);
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $classBasename = class_basename($this->className);
 
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->attribute,

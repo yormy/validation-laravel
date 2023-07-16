@@ -12,9 +12,9 @@ class SizeNotAllowedEvent
 
     protected string $filename;
 
-    private string $code = "SIZE_NOT_ALLOWED";
+    private string $code = 'SIZE_NOT_ALLOWED';
 
-    private string $severity = "low";
+    private string $severity = 'low';
 
     public function __construct(string $filename)
     {

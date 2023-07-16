@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -10,7 +12,6 @@ use function preg_match_all;
  * Class StrongPassword
  * - (new StrongPassword()) : 8 chars, Uppercase + lowercase + number
  * - (new StrongPassword())->forceUppercaseCharacters()->forceLowercaseCharacters(false)->forceNumbers()->forceSpecialCharacters()->withSpecialCharacters('£$*%^'),
- * @package Modules\Core\Rules
  */
 class StrongPassword extends Rule
 {
@@ -35,7 +36,6 @@ class StrongPassword extends Rule
     /**
      * @param  string  $attribute
      * @param  mixed  $value
-     * @return bool
      */
     public function passes($attribute, $value): bool
     {
@@ -72,10 +72,6 @@ class StrongPassword extends Rule
         return true;
     }
 
-    /**
-     * @param  int  $min
-     * @return self
-     */
     public function min(int $min): self
     {
         $this->minCharacters = $min;
@@ -84,7 +80,6 @@ class StrongPassword extends Rule
     }
 
     /**
-     * @param  bool  $flag
      * @return $this
      */
     public function forceUppercaseCharacters(bool $flag = true): self
@@ -94,10 +89,6 @@ class StrongPassword extends Rule
         return $this;
     }
 
-    /**
-     * @param  bool  $flag
-     * @return self
-     */
     public function forceLowercaseCharacters(bool $flag = true): self
     {
         $this->mustIncludeLowercaseCharacters = $flag;
@@ -105,10 +96,6 @@ class StrongPassword extends Rule
         return $this;
     }
 
-    /**
-     * @param  bool  $flag
-     * @return self
-     */
     public function forceNumbers(bool $flag = true): self
     {
         $this->mustIncludeNumbers = $flag;
@@ -116,10 +103,6 @@ class StrongPassword extends Rule
         return $this;
     }
 
-    /**
-     * @param  bool  $flag
-     * @return self
-     */
     public function forceSpecialCharacters(bool $flag = true): self
     {
         $this->mustIncludeSpecialCharacters = $flag;
@@ -127,10 +110,6 @@ class StrongPassword extends Rule
         return $this;
     }
 
-    /**
-     * @param  string  $characters
-     * @return self
-     */
     public function withSpecialCharacters(string $characters): self
     {
         $this->forceSpecialCharacters();
@@ -139,9 +118,6 @@ class StrongPassword extends Rule
         return $this;
     }
 
-    /**
-     * @return self
-     */
     public function reset(): self
     {
         $this->minCharacters = 8;
@@ -153,16 +129,13 @@ class StrongPassword extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
         $message = [];
 
-        $message[] = (string)__(
+        $message[] = (string) __(
             $key.'.base',
             [
                 'attribute' => $this->getAttribute(),
@@ -170,7 +143,7 @@ class StrongPassword extends Rule
         );
 
         if ($this->minCharacters > 0) {
-            $message[] = (string)__(
+            $message[] = (string) __(
                 $key.'.min',
                 [
                     'length' => $this->minCharacters,
@@ -179,19 +152,19 @@ class StrongPassword extends Rule
         }
 
         if ($this->mustIncludeUppercaseCharacters > 0) {
-            $message[] = (string)__($key.'.uppercase');
+            $message[] = (string) __($key.'.uppercase');
         }
 
         if ($this->mustIncludeLowercaseCharacters > 0) {
-            $message[] = (string)__($key.'.lowercase');
+            $message[] = (string) __($key.'.lowercase');
         }
 
         if ($this->mustIncludeNumbers > 0) {
-            $message[] = (string)__($key.'.numbers');
+            $message[] = (string) __($key.'.numbers');
         }
 
         if ($this->mustIncludeSpecialCharacters > 0) {
-            $message[] = (string)__(
+            $message[] = (string) __(
                 $key.'.special',
                 [
                     'characters' => $this->specialCharacters,

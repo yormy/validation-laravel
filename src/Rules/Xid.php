@@ -10,10 +10,12 @@ use Yormy\ValidationLaravel\Exceptions\XidNotFoundException;
 class Xid extends Rule
 {
     private bool $showField;
+
     private string $table;
+
     private $errorPrefix;
 
-    public function __construct($model, bool $showField = false, ?Exception $exception = null)
+    public function __construct($model, bool $showField = false, Exception $exception = null)
     {
         parent::__construct($exception);
 
@@ -36,7 +38,7 @@ class Xid extends Rule
 
         $regex = '/^[0-9a-zA-ZÆÄ]$/';
         if (preg_match($regex, $value) > 0) {
-            $this->errorPrefix = "B";
+            $this->errorPrefix = 'B';
             $passed = false;
         }
 
@@ -45,14 +47,14 @@ class Xid extends Rule
                 ->where('xid', $value)
                 ->whereNull('deleted_at')
                 ->doesntExist()) {
-                $this->errorPrefix = "C";
+                $this->errorPrefix = 'C';
                 $passed = false;
             }
         } else {
             if (DB::table($this->table)
                 ->where('xid', $value)
                 ->doesntExist()) {
-                $this->errorPrefix = "D";
+                $this->errorPrefix = 'D';
                 $passed = false;
             }
         }
@@ -64,18 +66,15 @@ class Xid extends Rule
         return $passed;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         if (! $this->showField) {
-            return (string)__('core::validation.xid_hidden_details', ['prefix' => $this->errorPrefix]);
+            return (string) __('core::validation.xid_hidden_details', ['prefix' => $this->errorPrefix]);
         }
 
         $key = 'core::validation.'.$this->getMessageKey();
 
-        return (string)__(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

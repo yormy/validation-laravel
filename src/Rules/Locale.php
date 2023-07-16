@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -8,7 +10,7 @@ class Locale extends Rule
      * Generate an example value that satisifies the validation rule.
      *
      **/
-    public function example() : string
+    public function example(): string
     {
         $allowedLocales = array_keys(config('localization.supportedLocales'));
 
@@ -18,7 +20,7 @@ class Locale extends Rule
     /**
      * Determine if the validation rule passes.
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
@@ -30,14 +32,11 @@ class Locale extends Rule
         return false;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

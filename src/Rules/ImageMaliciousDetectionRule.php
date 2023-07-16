@@ -2,11 +2,8 @@
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use Exception;
-
 class ImageMaliciousDetectionRule extends Rule
 {
-
     protected $malicious_keywords = [
         '\\/bin\\/bash',
         '__HALT_COMPILER',
@@ -20,31 +17,29 @@ class ImageMaliciousDetectionRule extends Rule
         'phpinfo',
         '\\<\\?php',
         '\\$_GET',
-        'whoami'
+        'whoami',
     ];
-
 
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
+     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     public function passes($attribute, $value)
     {
-        if (!request()->hasFile($attribute)) {
+        if (! request()->hasFile($attribute)) {
             return true;
         }
 
-        return !preg_match("/(".join("|", $this->malicious_keywords).")/im", request()->file($attribute)->get());
+        return ! preg_match('/('.implode('|', $this->malicious_keywords).')/im', request()->file($attribute)->get());
     }
 
     /**
      * Get the validation error message.
-     *
-     * @return string
      */
     public function message(): string
     {

@@ -3,40 +3,40 @@
 return [
 
     // leave the extensions empty for all allowed extensions
-    "upload" => [
-        "mime_allowed" => [
+    'upload' => [
+        'mime_allowed' => [
             'image/jpeg' => [
                 'jpg',
-                'jpeg'
+                'jpeg',
             ],
             'image/gif' => [],
             'image/png' => [],
             'image/bmp' => [],
             'application/pdf' => [],
             'application/octet-stream' => [
-                'mp4'
+                'mp4',
             ],
             'video/mp4' => [
-                'mp4'
+                'mp4',
             ],
             'application/vnd.oasis.opendocument.text' => [
-                'odt'
+                'odt',
             ],
             'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => [
-                'docx'
+                'docx',
             ],
             'application/msword' => [
-                'doc'
+                'doc',
             ],
         ],
 
-        "max_file_size_kb" => 600000000,
+        'max_file_size_kb' => 600000000,
 
-        "inconsistent_extension" => true,
+        'inconsistent_extension' => true,
 
-        "inconsistent_mime" => true,
+        'inconsistent_mime' => true,
 
-        "inconsistent_mime_extension" => true,
+        'inconsistent_mime_extension' => true,
 
         'content_blacklist' => [
             '<?php',
@@ -59,9 +59,9 @@ return [
             'InconsistentMimeException',
             'ExtensionInconsistentException',
             'ExtensionInvalidException',
-            'BlacklistedContentException'
+            'BlacklistedContentException',
         ],
 
-    ]
+    ],
 
 ];

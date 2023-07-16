@@ -1,13 +1,15 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use Exception;
-use Illuminate\Contracts\Validation\Rule as BaseRule;
-use Illuminate\Support\Str;
 use function __;
 use function class_basename;
+use Exception;
 use function get_called_class;
+use Illuminate\Contracts\Validation\Rule as BaseRule;
+use Illuminate\Support\Str;
 
 abstract class Rule implements BaseRule
 {
@@ -17,18 +19,17 @@ abstract class Rule implements BaseRule
 
     private ?Exception $exception;
 
-
-    public function __construct(?Exception $exception = null)
+    public function __construct(Exception $exception = null)
     {
         $this->exception = $exception;
     }
 
     public function message(): string
     {
-        return (string)__('bedrock-core::validation.' . $this->getMessageKey(), [
-                'attribute' => $this->getAttribute(),
-                'value' => $this->getValue()
-            ]);
+        return (string) __('bedrock-core::validation.'.$this->getMessageKey(), [
+            'attribute' => $this->getAttribute(),
+            'value' => $this->getValue(),
+        ]);
     }
 
     public function getAttribute(): string

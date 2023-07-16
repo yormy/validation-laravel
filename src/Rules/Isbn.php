@@ -1,12 +1,13 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 // phpcs:disable Generic.Files.LineLength
 
 namespace Yormy\ValidationLaravel\Rules;
 
 class Isbn extends Rule
 {
-
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -22,7 +24,6 @@ class FileNotExists extends Rule
 
     /**
      * FileExtension constructor.
-     * @param string $path
      */
     public function __construct(string $path)
     {
@@ -45,27 +46,22 @@ class FileNotExists extends Rule
          */
         $this->filename = $value->getClientOriginalName();
 
-        return ! Storage::exists($this->path . '/' . $this->filename);
+        return ! Storage::exists($this->path.'/'.$this->filename);
     }
 
     /**
      * Get the validation error message.
-     *
-     * @return string
      */
-//    public function message()
-//    {
-//        return __('Bestand :filename bestaat al', ['filename' => $this->filename]);
-//    }
+    //    public function message()
+    //    {
+    //        return __('Bestand :filename bestaat al', ['filename' => $this->filename]);
+    //    }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key.'.base',
             [
                 'attribute' => $this->getAttribute(),
@@ -73,7 +69,7 @@ class FileNotExists extends Rule
         );
 
         if ($this->includePrefix) {
-            return $message. "; ". __($key.'.prefix');
+            return $message.'; '.__($key.'.prefix');
         }
 
         return $message;

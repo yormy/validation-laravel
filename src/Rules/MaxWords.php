@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -12,7 +14,7 @@ class MaxWords extends Rule
      * Determine if the validation rule passes.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
@@ -30,14 +32,11 @@ class MaxWords extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

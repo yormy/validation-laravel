@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 /*
 Determine if all of the values in the input array exist as attributes for the given model class.
@@ -39,7 +41,6 @@ namespace Yormy\ValidationLaravel\Rules;
  * In the example below the validation will pass if all model_ids exist for the Model.
  * https://github.com/spatie/validation-laravel-rules
  * Class ModelsExist
- * @package Modules\Core\Rules
  */
 class ModelsExist extends Rule
 {
@@ -78,7 +79,7 @@ class ModelsExist extends Rule
 
         $classBasename = class_basename($this->modelClassName);
 
-        return (string)__('validationRules::messages.model_ids', [
+        return (string) __('validationRules::messages.model_ids', [
             'attribute' => $this->attribute,
             'model' => $classBasename,
             'modelAttribute' => $this->modelAttribute,

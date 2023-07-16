@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -9,7 +11,6 @@ use Illuminate\Support\Str;
 /**
  * https://github.com/spatie/validation-laravel-rules
  * Class Delimited
- * @package Modules\Core\Rules
  */
 class Delimited extends Rule
 {
@@ -158,9 +159,6 @@ class Delimited extends Rule
         ];
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         return $this->message;

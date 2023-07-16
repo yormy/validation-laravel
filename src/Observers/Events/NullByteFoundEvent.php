@@ -13,9 +13,9 @@ class NullByteFoundEvent
 
     protected string $filename;
 
-    private string $code = "NULL_BYTE";
+    private string $code = 'NULL_BYTE';
 
-    private string $severity = "severe";
+    private string $severity = 'severe';
 
     public function __construct(string $filename)
     {

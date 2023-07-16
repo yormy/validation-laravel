@@ -8,7 +8,6 @@ class InvalidImageException extends Exception
 {
     /**
      * InvalidValueException constructor.
-     * @param $value
      */
     public function __construct($value)
     {

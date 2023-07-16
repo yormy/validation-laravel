@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -24,14 +26,11 @@ class CurrentPasswordConfirmed extends Rule
         return false;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
-        $key = 'validation.' . $this->getMessageKey();
+        $key = 'validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

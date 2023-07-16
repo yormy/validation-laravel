@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -23,13 +25,9 @@ class StringNotContains extends Rule
             throw new RuleSetupException('Zero phrases have been whitelisted using the "phrases()" method');
         }
 
-        return preg_match('(' . implode('|', $this->phrases) . ')', $value) === 0;
+        return preg_match('('.implode('|', $this->phrases).')', $value) === 0;
     }
 
-    /**
-     * @param  array  $phrases
-     * @return self
-     */
     public function phrases(array $phrases): self
     {
         $this->phrases = $phrases;
@@ -37,14 +35,11 @@ class StringNotContains extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        return (string)__(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
@@ -52,7 +47,7 @@ class StringNotContains extends Rule
                     ', ',
                     array_map(
                         function ($phrases) {
-                            return "'".$phrases. "'";
+                            return "'".$phrases."'";
                         },
                         $this->phrases
                     )

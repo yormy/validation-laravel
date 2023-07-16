@@ -14,9 +14,9 @@ class MimeNotAllowedEvent
 
     protected string $mimeType;
 
-    private string $code = "MIME_NOT_ALLOWED";
+    private string $code = 'MIME_NOT_ALLOWED';
 
-    private string $severity = "low";
+    private string $severity = 'low';
 
     public function __construct(string $filename, string $mimeType)
     {

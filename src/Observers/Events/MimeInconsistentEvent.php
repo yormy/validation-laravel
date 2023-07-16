@@ -14,9 +14,9 @@ class MimeInconsistentEvent
 
     protected string $mimeType;
 
-    private string $code = "MIME_INCONSISTENT";
+    private string $code = 'MIME_INCONSISTENT';
 
-    private string $severity = "medium";
+    private string $severity = 'medium';
 
     public function __construct(string $filename, string $mimeType)
     {

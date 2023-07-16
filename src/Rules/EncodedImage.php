@@ -1,14 +1,14 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Validator;
 
 class EncodedImage extends Rule
 {
-
     /**
      * Pointer to the temporary file.
      *
@@ -17,8 +17,9 @@ class EncodedImage extends Rule
 
     protected $parameters;
 
-    const WEBP = "webp";
-    const JPEG = "jpeg";
+    const WEBP = 'webp';
+
+    const JPEG = 'jpeg';
 
     public function __construct(array $parameters = [])
     {
@@ -29,7 +30,7 @@ class EncodedImage extends Rule
      * Write the given data to a temporary file.
      *
      **/
-    protected function createTemporaryFile(string $data) : UploadedFile
+    protected function createTemporaryFile(string $data): UploadedFile
     {
         $this->file = tmpfile();
 
@@ -53,7 +54,7 @@ class EncodedImage extends Rule
      * You can also supply multiple mime types as an array.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $value = base64_decode($value);
         $this->setAttribute($attribute);
@@ -83,9 +84,6 @@ class EncodedImage extends Rule
         return false;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
@@ -93,7 +91,7 @@ class EncodedImage extends Rule
         $mimes = $this->parameters;
         $types = implode(' ; ', $mimes);
 
-        $message = (string)__(
+        $message = (string) __(
             $key.'.base',
             [
                 'attribute' => $this->getAttribute(),

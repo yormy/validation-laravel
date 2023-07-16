@@ -13,7 +13,6 @@ trait RetrievesSafeInput
      * Get an element from the validated input.
      *
      * @param  string  $key
-     * @return mixed
      */
     public function __get($key): mixed
     {
@@ -22,10 +21,10 @@ trait RetrievesSafeInput
             $values = $this->validated();
             $isValidated = array_key_exists($key, $values);
 
-            if (!$isValidated) {
+            if (! $isValidated) {
                 $invalidatedKey = $key;
             }
-        } catch(\Throwable $e)  {
+        } catch (\Throwable $e) {
             $values = $this->all();
         }
 
@@ -35,5 +34,4 @@ trait RetrievesSafeInput
 
         return Arr::get($values, $key, fn () => $this->route($key));
     }
-
 }

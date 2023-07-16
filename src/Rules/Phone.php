@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -7,13 +9,15 @@ use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
 /**
  * https://github.com/validation-laravel-rules/phone
  * Class Phone
- * @package Modules\Core\Rules
  */
 class Phone extends Rule
 {
     const FORMAT_DIGITS = 1;
+
     const FORMAT_E123 = 2;
+
     const FORMAT_E164 = 3;
+
     const FORMAT_NANP = 4;
 
     private $format = self::FORMAT_E164;
@@ -21,9 +25,8 @@ class Phone extends Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
+     * @param  string  $attribute
      * @param  mixed  $value
-     *
      * @return bool
      */
     public function passes($attribute, $value)
@@ -44,27 +47,27 @@ class Phone extends Rule
         }
     }
 
-    private function example() : string
+    private function example(): string
     {
         switch ($this->format) {
             case static::FORMAT_DIGITS:
-                $example = "111111199999";
+                $example = '111111199999';
 
                 break;
             case static::FORMAT_E123:
-                $example = "+22 555 666 7777";
+                $example = '+22 555 666 7777';
 
                 break;
             case static::FORMAT_E164:
-                $example = "+15556667777";
+                $example = '+15556667777';
 
                 break;
             case static::FORMAT_NANP:
-                $example = "+1 (555) 666-7";
+                $example = '+1 (555) 666-7';
 
                 break;
             default:
-                $example = "+15556667777";
+                $example = '+15556667777';
 
                 break;
         }
@@ -103,6 +106,7 @@ class Phone extends Rule
     /**
      * Checks through all validation methods to verify it is in a
      * phone number format of some type
+     *
      * @param  string  $value The phone number to check
      * @return bool        is it correct format?
      */
@@ -111,7 +115,7 @@ class Phone extends Rule
         return $this->isE123($value) || $this->isE164($value) || $this->isNANP($value) || $this->isDigits($value);
     }
 
-    protected function isDigits(string $value) : bool
+    protected function isDigits(string $value): bool
     {
         $conditions = [];
         $conditions[] = strlen($value) >= 10;
@@ -123,7 +127,7 @@ class Phone extends Rule
 
     /**
      * Format example +22 555 555 1234, (607) 555 1234, (022607) 555 1234
-     * @param $value
+     *
      * @return bool
      */
     protected function isE123($value)
@@ -133,13 +137,14 @@ class Phone extends Rule
 
     /**
      * Format example +15555555555
+     *
      * @param  string  $value The phone number to check
      * @return bool        is it correct format?
      */
     protected function isE164($value)
     {
         $conditions = [];
-        $conditions[] = strpos($value, "+") === 0;
+        $conditions[] = strpos($value, '+') === 0;
         $conditions[] = strlen($value) >= 9;
         $conditions[] = strlen($value) <= 16;
         $conditions[] = preg_match("/[^\d+]/i", $value) === 0;
@@ -150,6 +155,7 @@ class Phone extends Rule
     /**
      * Format examples: (555) 555-5555, 1 (555) 555-5555, 1-555-555-5555, 555-555-5555, 1 555 555-5555
      * https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers#United_States.2C_Canada.2C_and_other_NANP_countries
+     *
      * @param  string  $value The phone number to check
      * @return bool        is it correct format?
      */
@@ -161,12 +167,9 @@ class Phone extends Rule
         return (bool) array_product($conditions);
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
-        $key = 'validation.' . $this->getMessageKey();
+        $key = 'validation.'.$this->getMessageKey();
 
         switch ($this->format) {
             case static::FORMAT_DIGITS:
@@ -191,8 +194,7 @@ class Phone extends Rule
                 break;
         }
 
-
-        return (string)__(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

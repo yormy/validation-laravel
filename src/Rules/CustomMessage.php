@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -20,7 +22,7 @@ class CustomMessage extends Rule
 
     public function message(): string
     {
-        $message = (string)__(
+        $message = (string) __(
             $this->errorMessageKey,
             [
                 'attribute' => $this->getAttribute(),

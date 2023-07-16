@@ -1,4 +1,5 @@
 <?php
+
 // phpcs:disable Generic.Files.LineLength
 
 namespace Yormy\ValidationLaravel\Observers\Events;
@@ -13,9 +14,9 @@ class XidValidationFailedEvent
 
     protected string $ipAddress;
 
-    private string $code = "XID_NOT_FOUND";
+    private string $code = 'XID_NOT_FOUND';
 
-    private string $severity = "medium";
+    private string $severity = 'medium';
 
     public function __construct(string $ipAddress = '')
     {
@@ -40,8 +41,8 @@ class XidValidationFailedEvent
             'HTTP_X_CLUSTER_CLIENT_IP',
             'HTTP_FORWARDED_FOR',
             'HTTP_FORWARDED',
-            'REMOTE_ADDR'
-            ] as $key) {
+            'REMOTE_ADDR',
+        ] as $key) {
             if (array_key_exists($key, $_SERVER) === true) {
                 foreach (explode(',', $_SERVER[$key]) as $ip) {
                     $ip = trim($ip); // just to be safe

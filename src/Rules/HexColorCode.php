@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -11,7 +13,6 @@ use function preg_match;
  * - (new HexColourCode())->withoutPrefix()->longFormat() : long length code , omitting prefix i.e. cc0000:
  *
  * Class HexColourCode
- * @package Modules\Core\Rules
  */
 class HexColorCode extends Rule
 {
@@ -24,7 +25,6 @@ class HexColorCode extends Rule
     /**
      * @param  string  $attribute
      * @param  mixed  $value
-     * @return bool
      */
     public function passes($attribute, $value): bool
     {
@@ -81,14 +81,11 @@ class HexColorCode extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key.'.base',
             [
                 'attribute' => $this->getAttribute(),
@@ -97,7 +94,7 @@ class HexColorCode extends Rule
         );
 
         if ($this->includePrefix) {
-            return $message. "; ". __($key.'.prefix');
+            return $message.'; '.__($key.'.prefix');
         }
 
         return $message;

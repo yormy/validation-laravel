@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -10,7 +12,6 @@ class Lowercase extends Rule
     /**
      * @param  string  $attribute
     <?php declare(strict_types = 1);  * @param  mixed  $value
-     * @return bool
      */
     public function passes($attribute, $value): bool
     {

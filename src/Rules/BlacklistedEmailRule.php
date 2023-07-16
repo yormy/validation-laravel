@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -15,16 +17,16 @@ class BlacklistedEmailRule extends Rule
     {
         $this->setAttribute($attribute);
 
-        $domain = explode("@", $value)[1];
+        $domain = explode('@', $value)[1];
 
         $model = $this->className;
 
         if (config('security.database_encryption')) {
             $isBlacklisted = $model::whereEncrypted('email_address', $value)
-                ->orWhereEncrypted('email_address', '*@' . $domain)->count();
+                ->orWhereEncrypted('email_address', '*@'.$domain)->count();
         } else {
             $isBlacklisted = $model::where('email_address', $value)
-                ->orWhere('email_address', '*@' . $domain)->count();
+                ->orWhere('email_address', '*@'.$domain)->count();
         }
 
         if ($isBlacklisted <= 0) {

@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -9,7 +11,6 @@ use Yormy\ValidationLaravel\Rules\Factories\PasswordExposedCheckerFactory;
 /**
  * Check if password is exposed and listed in HaveIBeenPowned
  * Class PasswordExposed
- * @package Modules\Core\Rules
  */
 class PasswordExposed extends Rule
 {
@@ -17,6 +18,7 @@ class PasswordExposed extends Rule
      * @var PasswordExposedChecker
      */
     private $passwordExposedChecker;
+
     /**
      * @var string
      */
@@ -24,8 +26,6 @@ class PasswordExposed extends Rule
 
     /**
      * PasswordExposed constructor.
-     *
-     * @param PasswordExposedChecker|null $passwordExposedChecker
      */
     public function __construct(PasswordExposedChecker $passwordExposedChecker = null)
     {
@@ -40,9 +40,8 @@ class PasswordExposed extends Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed  $value
-     *
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)

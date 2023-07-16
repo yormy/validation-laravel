@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -9,11 +11,11 @@ use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
 /**
  * Requires the authenticated user's id to match the user_id column on a given database record e.g. owner:posts,id
  * Class RecordOwner
- * @package Modules\Core\Rules
  */
 class RecordOwner extends Rule
 {
     private $table;
+
     private $column;
 
     /**
@@ -24,7 +26,7 @@ class RecordOwner extends Rule
      * 2. The column on the table to compare the value against.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
@@ -58,6 +60,6 @@ class RecordOwner extends Rule
 
     public function message(): string
     {
-        return (string)__('core::validation.'.$this->getMessageKey(), ['attribute' => $this->getAttribute()]);
+        return (string) __('core::validation.'.$this->getMessageKey(), ['attribute' => $this->getAttribute()]);
     }
 }

@@ -1,11 +1,12 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
 /**
  * Allow only Alpha (including umlaut Ü etc and special chars) , dashes whitespace
  * Class AlphaDashWhitespace
- * @package Modules\Core\Rules
  */
 class NaturalName extends Rule
 {
@@ -24,6 +25,6 @@ class NaturalName extends Rule
             return false;
         }
 
-        return preg_match("/^[\s\pL\pM\pN'_-]+$/u", (string)$value) > 0;
+        return preg_match("/^[\s\pL\pM\pN'_-]+$/u", (string) $value) > 0;
     }
 }

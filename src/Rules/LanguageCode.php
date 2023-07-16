@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -13,7 +15,7 @@ class LanguageCode extends Rule
      * Determine if the validation rule passes.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
@@ -30,7 +32,6 @@ class LanguageCode extends Rule
 
     /**
      * @param  array  $phrases
-     * @return self
      */
     public function iso3(): self
     {
@@ -39,9 +40,6 @@ class LanguageCode extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
@@ -54,7 +52,7 @@ class LanguageCode extends Rule
             $iso = 'Iso6391 Alpha 3';
         }
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

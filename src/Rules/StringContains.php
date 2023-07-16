@@ -1,11 +1,11 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
 use function __;
-
 use function array_map;
-
 use function collect;
 use Illuminate\Support\Str;
 use function implode;
@@ -16,7 +16,6 @@ use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
  * - Contains any : new StringContains())->phrases(['laravel','php',])
  * - Contains all : new StringContains())->phrases(['laravel','php',])->strictly()
  * Class StringContains
- * @package Modules\Core\Rules
  */
 class StringContains extends Rule
 {
@@ -29,7 +28,6 @@ class StringContains extends Rule
     /**
      * @param  string  $attribute
      * @param  mixed  $value
-     * @return bool
      */
     public function passes($attribute, $value): bool
     {
@@ -52,10 +50,6 @@ class StringContains extends Rule
         return $matched->isNotEmpty();
     }
 
-    /**
-     * @param  array  $phrases
-     * @return self
-     */
     public function phrases(array $phrases): self
     {
         $this->phrases = $phrases;
@@ -83,9 +77,6 @@ class StringContains extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = sprintf(
@@ -94,7 +85,7 @@ class StringContains extends Rule
             $this->mustContainAllPhrases ? 'strict' : 'loose'
         );
 
-        return (string)__(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
@@ -102,7 +93,7 @@ class StringContains extends Rule
                     ', ',
                     array_map(
                         function ($phrase) {
-                            return "'".$phrase. "'";
+                            return "'".$phrase."'";
                         },
                         $this->phrases
                     )

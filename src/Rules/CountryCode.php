@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -6,9 +8,7 @@ use Yormy\ValidationLaravel\Rules\Support\Iso3166Alpha2;
 use Yormy\ValidationLaravel\Rules\Support\Iso3166Alpha3;
 
 /**
- *
  * Class CountryCode
- * @package Modules\Core\Rules
  */
 class CountryCode extends Rule
 {
@@ -18,7 +18,7 @@ class CountryCode extends Rule
      * Determine if the validation rule passes.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
@@ -35,7 +35,6 @@ class CountryCode extends Rule
 
     /**
      * @param  array  $phrases
-     * @return self
      */
     public function iso3(): self
     {
@@ -44,9 +43,6 @@ class CountryCode extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
@@ -59,7 +55,7 @@ class CountryCode extends Rule
             $iso = 'Iso3166 Alpha 3';
         }
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

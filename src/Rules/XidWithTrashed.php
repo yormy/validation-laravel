@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -8,8 +10,11 @@ use Yormy\ValidationLaravel\Exceptions\XidNotFoundException;
 class XidWithTrashed extends Rule
 {
     private bool $showField;
+
     private string $table;
+
     private $errorPrefix;
+
     protected bool $treatAsHackAttempt;
 
     public function __construct(string $table, bool $showField = false, bool $treatAsHackAttempt = false)
@@ -33,20 +38,20 @@ class XidWithTrashed extends Rule
         $passed = true;
 
         if (mb_strlen($value) !== 22) {
-            $this->errorPrefix = "A";
+            $this->errorPrefix = 'A';
             $passed = false;
         }
 
         $regex = '/^[0-9a-zA-ZÆÄ]$/';
         if (preg_match($regex, $value) > 0) {
-            $this->errorPrefix = "B";
+            $this->errorPrefix = 'B';
             $passed = false;
         }
 
         if (DB::table($this->table)
             ->where('xid', $value)
             ->doesntExist()) {
-            $this->errorPrefix = "B";
+            $this->errorPrefix = 'B';
             $passed = false;
         }
 
@@ -57,18 +62,15 @@ class XidWithTrashed extends Rule
         return $passed;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         if (! $this->showField) {
-            return (string)__('core::validation.xid_hidden_details', ['prefix' => $this->errorPrefix]);
+            return (string) __('core::validation.xid_hidden_details', ['prefix' => $this->errorPrefix]);
         }
 
         $key = 'core::validation.'.$this->getMessageKey();
 
-        return (string)__(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

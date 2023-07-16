@@ -1,11 +1,12 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
 /**
  * - (new Decimal())->integer(3)->fractal(2);
  * Class Decimal
- * @package Modules\Core\Rules
  */
 class Decimal extends Rule
 {
@@ -17,9 +18,9 @@ class Decimal extends Rule
      * Generate an example value that satisifies the validation rule.
      *
      **/
-    public function example() : string
+    public function example(): string
     {
-        return mt_rand(1, (int) str_repeat('9', $this->integer)) . '.' .
+        return mt_rand(1, (int) str_repeat('9', $this->integer)).'.'.
                mt_rand(1, (int) str_repeat('9', $this->fractal));
     }
 
@@ -31,7 +32,7 @@ class Decimal extends Rule
      * 2. The maximum number of digits after the decimal point.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
@@ -43,7 +44,6 @@ class Decimal extends Rule
 
     /**
      * @param  array  $phrases
-     * @return self
      */
     public function integer(int $integer): self
     {
@@ -54,7 +54,6 @@ class Decimal extends Rule
 
     /**
      * @param  array  $phrases
-     * @return self
      */
     public function fractal(int $fractal): self
     {
@@ -63,14 +62,11 @@ class Decimal extends Rule
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function message(): string
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string)__(
+        $message = (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),

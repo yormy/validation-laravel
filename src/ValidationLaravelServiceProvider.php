@@ -15,16 +15,16 @@ class ValidationLaravelServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/validation-laravel.php' => config_path('validation-laravel.php'),
+                __DIR__.'/../config/validation-laravel.php' => config_path('validation-laravel.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views/blade' => base_path('resources/views/vendor/validation-laravel'),
+                __DIR__.'/../resources/views/blade' => base_path('resources/views/vendor/validation-laravel'),
             ], 'blade');
 
             $this->publishes([
-                __DIR__ . '/../resources/views/vue' => base_path('resources/views/vendor/validation-laravel'),
-                __DIR__ . '/../resources/assets' => resource_path('assets/vendor/validation-laravel'),
+                __DIR__.'/../resources/views/vue' => base_path('resources/views/vendor/validation-laravel'),
+                __DIR__.'/../resources/assets' => resource_path('assets/vendor/validation-laravel'),
             ], 'vue');
 
             $this->publishMigrations();
@@ -36,12 +36,12 @@ class ValidationLaravelServiceProvider extends ServiceProvider
             $ui_type = 'blade';
         } else {
             $ui_type = 'blade';
-            if ("VUE" === config('validation-laravel.ui_type')) {
+            if ('VUE' === config('validation-laravel.ui_type')) {
                 $ui_type = 'vue';
             }
         }
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/'. $ui_type, 'validation-laravel');
+        $this->loadViewsFrom(__DIR__.'/../resources/views/'.$ui_type, 'validation-laravel');
 
         $this->registerGuestRoutes();
         $this->registerUserRoutes();
@@ -66,8 +66,7 @@ class ValidationLaravelServiceProvider extends ServiceProvider
                 $paddedIndex = str_pad(strval($index), 2, '0', STR_PAD_LEFT);
                 $newSequence .= $paddedIndex;
                 $this->publishes([
-                    __DIR__ . "/../database/migrations/{$migrationFileName}.stub"
-                    => database_path('migrations/' . $newSequence . '_' . $migrationFileName),
+                    __DIR__."/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/'.$newSequence.'_'.$migrationFileName),
                 ], 'migrations');
 
                 $index++;
@@ -77,7 +76,7 @@ class ValidationLaravelServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/validation-laravel.php', 'validation-laravel');
+        $this->mergeConfigFrom(__DIR__.'/../config/validation-laravel.php', 'validation-laravel');
         $this->app->register(EventServiceProvider::class);
     }
 
@@ -88,7 +87,7 @@ class ValidationLaravelServiceProvider extends ServiceProvider
     private function registerUserRoutes()
     {
         Route::macro('ValidationLaravelUser', function (string $prefix) {
-            Route::prefix($prefix)->name($prefix. ".")->group(function () {
+            Route::prefix($prefix)->name($prefix.'.')->group(function () {
                 Route::get('/details', [ReferrerDetailsController::class, 'show'])->name('show');
             });
         });
@@ -97,11 +96,11 @@ class ValidationLaravelServiceProvider extends ServiceProvider
     private function registerAdminRoutes()
     {
         Route::macro('ValidationLaravelAdmin', function (string $prefix) {
-            Route::prefix($prefix)->name($prefix. ".")->group(function () {
+            Route::prefix($prefix)->name($prefix.'.')->group(function () {
                 Route::get('/referrers', [ReferrerOverviewController::class, 'index'])->name('overview');
                 Route::get('/referrers/{referrer}', [
                     ReferrerDetailsController::class,
-                    'showForUser'
+                    'showForUser',
                 ])
                     ->name('showForUser');
             });
@@ -111,7 +110,7 @@ class ValidationLaravelServiceProvider extends ServiceProvider
     public static function migrationFileExists(string $migrationFileName): bool
     {
         $len = strlen($migrationFileName);
-        foreach (glob(database_path("migrations/*.php")) as $filename) {
+        foreach (glob(database_path('migrations/*.php')) as $filename) {
             if ((substr($filename, -$len) === $migrationFileName)) {
                 return true;
             }

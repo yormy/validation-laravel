@@ -1,19 +1,20 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
 use Illuminate\Support\Facades\DB;
-
 use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
 
 /**
  * Requires that the given value is not present in a given database table / column - see class for details
  * Class Missing
- * @package Axiom\Rules
  */
 class MissingInDb extends Rule
 {
     private $table = null;
+
     private $column = null;
 
     /**
@@ -24,7 +25,7 @@ class MissingInDb extends Rule
      * 2. The column on the table to compare the value against.
      *
      **/
-    public function passes($attribute, $value) : bool
+    public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
 
