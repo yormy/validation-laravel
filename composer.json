@@ -1,0 +1,77 @@
+{
+    "name": "yormy/validation-laravel",
+    "description": "",
+    "keywords": [
+        "yormy",
+        "validation-laravel"
+    ],
+    "homepage": "https://gitlab.com/yormy/validation-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yormy",
+            "email": "dev@yormy.com",
+            "homepage": "https://yormy.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "ext-zip": "*",
+        "php": "^8.1|^8.2",
+        "laravel/framework": "^9|^10",
+        "orchestra/testbench": "^7|^8"
+    },
+    "require-dev": {
+        "jaschilz/php-coverage-badger": "^2.0",
+        "phpmd/phpmd": "^2.12",
+        "phpstan/phpstan": "^1.8",
+        "phpunit/phpunit": "^9|^10",
+        "psalm/plugin-laravel": "^2.0",
+        "roave/security-advisories": "dev-master",
+        "squizlabs/php_codesniffer": "^3.7",
+        "vimeo/psalm": "^4.24"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yormy\\ValidationLaravel\\": "src",
+            "Yormy\\ValidationLaravel\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yormy\\ValidationLaravel\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "cs-fixer" : "phpcbf",
+        "md": "vendor/bin/phpmd . html cleancode --reportfile report.html",
+        "phpcs": "phpcs --standard=PSR2 -s --exclude=Generic.Files.LineLength --standard=./phpcs.xml --report-file=phpcs-report.txt",
+        "phpstan": "vendor/bin/phpstan analyze src --error-format=raw --level=4",
+        "psalm": "vendor/bin/psalm --no-diff --no-cache --report-show-info=false --report=psalm-report.txt",
+        "psalm-debug": "vendor/bin/psalm --no-cache --debug --debug-by-line",
+        "test": "vendor/bin/phpunit --colors=always --testdox",
+        "test-browser": "vendor/bin/phpunit tests/Browser --colors=always --testdox",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "post-install-cmd": [
+            "yes | cp -Rf ./bin/githooks/. ./.git/hooks/"
+        ],
+        "post-update-cmd": [
+            "yes | cp -Rf ./bin/githooks/. ./.git/hooks/"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yormy\\ValidationLaravel\\ValidationLaravelServiceProvider"
+            ],
+            "aliases": {
+                "ValidationLaravel": "Yormy\\ValidationLaravel\\ValidationLaravelFacade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
