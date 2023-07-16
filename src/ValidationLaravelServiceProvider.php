@@ -4,9 +4,6 @@ namespace Yormy\ValidationLaravel;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Yormy\ValidationLaravel\Commands\ValidationLaravelCommand;
-use Yormy\ValidationLaravel\Http\Controllers\ReferrerDetailsController;
-use Yormy\ValidationLaravel\Http\Controllers\ReferrerOverviewController;
 use Yormy\ValidationLaravel\Providers\EventServiceProvider;
 
 class ValidationLaravelServiceProvider extends ServiceProvider
@@ -28,11 +25,6 @@ class ValidationLaravelServiceProvider extends ServiceProvider
             ], 'vue');
 
             $this->publishMigrations();
-
-            $this->commands([
-                ValidationLaravelCommand::class,
-            ]);
-
             $ui_type = 'blade';
         } else {
             $ui_type = 'blade';
