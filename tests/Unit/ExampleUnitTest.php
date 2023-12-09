@@ -8,6 +8,7 @@ class ExampleUnitTest extends TestCase
 {
     /**
      * @test
+     * @group  xxx
      */
     public function example(): void
     {

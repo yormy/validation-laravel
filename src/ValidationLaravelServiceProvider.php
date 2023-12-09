@@ -33,6 +33,8 @@ class ValidationLaravelServiceProvider extends ServiceProvider
             }
         }
 
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
         $this->loadViewsFrom(__DIR__.'/../resources/views/'.$ui_type, 'validation-laravel');
 
         $this->registerGuestRoutes();
