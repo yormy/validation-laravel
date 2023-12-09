@@ -31,6 +31,11 @@ class BannedEmailService
         return false;
     }
 
+    public function isNotBanned(string $email) : bool
+    {
+        return !$this->isBanned($email);
+    }
+
     private function getBanned() : string
     {
         $bannedEmailRepository = new BannedEmailRepository();
