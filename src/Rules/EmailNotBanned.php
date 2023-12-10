@@ -4,21 +4,17 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
+use Mexion\BedrockUsersv2\Domain\User\Repositories\MemberRepository;
 use Yormy\ValidationLaravel\Facades\BannedEmail;
 
-class EmailNotBanned extends Rule
+class EmailNotBanned implements ValidationRule
 {
-    /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
-     */
-    public function passes($attribute, $value)
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $this->setAttribute($attribute);
-
-        return BannedEmail::isNotBanned($value);
+        if (BannedEmail::isBanned($value)) {
+            $fail(__('validation::rule.email.banned' ,['attribute' => $attribute, 'value' => $value]));
+        }
     }
 }

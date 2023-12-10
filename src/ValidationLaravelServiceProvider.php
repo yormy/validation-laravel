@@ -10,36 +10,32 @@ class ValidationLaravelServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../config/validation-laravel.php' => config_path('validation-laravel.php'),
-            ], 'config');
-
-            $this->publishes([
-                __DIR__.'/../resources/views/blade' => base_path('resources/views/vendor/validation-laravel'),
-            ], 'blade');
-
-            $this->publishes([
-                __DIR__.'/../resources/views/vue' => base_path('resources/views/vendor/validation-laravel'),
-                __DIR__.'/../resources/assets' => resource_path('assets/vendor/validation-laravel'),
-            ], 'vue');
-
-            $this->publishMigrations();
-            $ui_type = 'blade';
-        } else {
-            $ui_type = 'blade';
-            if ('VUE' === config('validation-laravel.ui_type')) {
-                $ui_type = 'vue';
-            }
-        }
+        $this->publish();
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views/'.$ui_type, 'validation-laravel');
+        $this->registerTranslations();
 
         $this->registerGuestRoutes();
         $this->registerUserRoutes();
         $this->registerAdminRoutes();
+    }
+
+    private function publish(): void
+    {
+        if ($this->app->runningInConsole()) {
+
+            $this->publishes([
+                __DIR__.'/../config/validation-laravel.php' => config_path('validation-laravel.php'),
+            ], 'config');
+
+
+            $this->publishes([
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/bedrock-usersv2'),
+            ], 'translations');
+
+            $this->publishMigrations();
+        }
     }
 
     private function publishMigrations()
@@ -66,6 +62,11 @@ class ValidationLaravelServiceProvider extends ServiceProvider
                 $index++;
             }
         }
+    }
+
+    public function registerTranslations(): void
+    {
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'validation');
     }
 
     public function register()
