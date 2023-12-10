@@ -133,5 +133,4 @@ return [
     'uuid' => 'The :attribute must be a valid UUID.',
 
     'current-password-confirmed' => 'Your current password is incorrect',
-    'authenticator' =>'Wrong authenticator code',
 ];
