@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use Illuminate\Support\Str;
-use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
-
 use function __;
 use function array_map;
 use function collect;
+use Illuminate\Support\Str;
 use function implode;
 use function sprintf;
+use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
 
 /**
  * - Contains any : new StringContains())->phrases(['laravel','php',])

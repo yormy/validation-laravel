@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use Illuminate\Support\Str;
-
 use function __;
+use Illuminate\Support\Str;
 use function preg_match;
 
 /**
