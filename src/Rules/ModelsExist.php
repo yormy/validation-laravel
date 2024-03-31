@@ -44,14 +44,11 @@ namespace Yormy\ValidationLaravel\Rules;
  */
 class ModelsExist extends Rule
 {
-    /** @var string */
-    protected $modelClassName;
+    protected string $modelClassName;
 
-    /** @var string */
-    protected $modelAttribute;
+    protected string $modelAttribute;
 
-    /** @var array */
-    protected $modelIds;
+    protected array $modelIds;
 
     public function __construct(string $modelClassName, string $attribute = 'id')
     {

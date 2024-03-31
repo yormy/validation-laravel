@@ -9,41 +9,20 @@ use Illuminate\Support\Str;
 
 class EncodedImage extends Rule
 {
+
+    public const WEBP = 'webp';
+
+    public const JPEG = 'jpeg';
     /**
      * Pointer to the temporary file.
-     *
-     **/
+     */
     protected $file;
 
     protected $parameters;
 
-    const WEBP = 'webp';
-
-    const JPEG = 'jpeg';
-
     public function __construct(array $parameters = [])
     {
         $this->parameters = $parameters;
-    }
-
-    /**
-     * Write the given data to a temporary file.
-     *
-     **/
-    protected function createTemporaryFile(string $data): UploadedFile
-    {
-        $this->file = tmpfile();
-
-        fwrite($this->file, base64_decode(Str::after($data, 'base64,')));
-
-        return new UploadedFile(
-            stream_get_meta_data($this->file)['uri'],
-            'image',
-            'text/plain',
-            null,
-            true,
-            true
-        );
     }
 
     /**
@@ -52,8 +31,7 @@ class EncodedImage extends Rule
      * The rule requires at least a single parameter, which is
      * the expected mime types of the file e.g. png, jpeg etc.
      * You can also supply multiple mime types as an array.
-     *
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $value = base64_decode($value);
@@ -62,7 +40,7 @@ class EncodedImage extends Rule
         $valid_mime = false;
 
         foreach ($this->parameters as $mime) {
-            if (Str::startsWith($value, "data:image/$mime;base64,")) {
+            if (Str::startsWith($value, "data:image/{$mime};base64,")) {
                 $valid_mime = true;
 
                 break;
@@ -91,14 +69,31 @@ class EncodedImage extends Rule
         $mimes = $this->parameters;
         $types = implode(' ; ', $mimes);
 
-        $message = (string) __(
+        return (string) __(
             $key.'.base',
             [
                 'attribute' => $this->getAttribute(),
                 'type' => $types,
             ]
         );
+    }
 
-        return $message;
+    /**
+     * Write the given data to a temporary file.
+     */
+    protected function createTemporaryFile(string $data): UploadedFile
+    {
+        $this->file = tmpfile();
+
+        fwrite($this->file, base64_decode(Str::after($data, 'base64,')));
+
+        return new UploadedFile(
+            stream_get_meta_data($this->file)['uri'],
+            'image',
+            'text/plain',
+            null,
+            true,
+            true
+        );
     }
 }

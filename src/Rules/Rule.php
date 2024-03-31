@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
+use function __;
+use function class_basename;
 use Exception;
 use Illuminate\Contracts\Validation\Rule as BaseRule;
 use Illuminate\Support\Str;
-
-use function __;
-use function class_basename;
-use function get_called_class;
 
 abstract class Rule implements BaseRule
 {
@@ -55,7 +53,7 @@ abstract class Rule implements BaseRule
 
     public function getMessageKey(): string
     {
-        $calledClassName = class_basename(get_called_class());
+        $calledClassName = class_basename(static::class);
 
         return Str::slug(Str::snake($calledClassName));
     }

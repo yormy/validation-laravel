@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel\Rules;
 
 use Exception;
@@ -20,17 +22,13 @@ class Xid extends Rule
         parent::__construct($exception);
 
         $this->showField = $showField;
-        $this->table = (new $model)->getTable();
+        $this->table = (new $model())->getTable();
     }
 
     /**
      * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

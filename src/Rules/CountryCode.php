@@ -16,8 +16,7 @@ class CountryCode extends Rule
 
     /**
      * Determine if the validation rule passes.
-     *
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
@@ -55,14 +54,12 @@ class CountryCode extends Rule
             $iso = 'Iso3166 Alpha 3';
         }
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
                 'iso' => $iso,
             ]
         );
-
-        return $message;
     }
 }

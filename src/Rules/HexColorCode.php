@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use Illuminate\Support\Str;
-
 use function __;
+use Illuminate\Support\Str;
 use function preg_match;
 
 /**
@@ -17,17 +16,11 @@ use function preg_match;
  */
 class HexColorCode extends Rule
 {
-    /** @var bool */
-    protected $forceSixDigitCode = false;
+    protected bool $forceSixDigitCode = false;
 
-    /** @var bool */
-    protected $includePrefix = true;
+    protected bool $includePrefix = true;
 
-    /**
-     * @param  string  $attribute
-     * @param  mixed  $value
-     */
-    public function passes($attribute, $value): bool
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

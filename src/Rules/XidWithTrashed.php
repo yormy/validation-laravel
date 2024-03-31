@@ -9,13 +9,13 @@ use Yormy\ValidationLaravel\Exceptions\XidNotFoundException;
 
 class XidWithTrashed extends Rule
 {
+
+    protected bool $treatAsHackAttempt;
     private bool $showField;
 
     private string $table;
 
     private $errorPrefix;
-
-    protected bool $treatAsHackAttempt;
 
     public function __construct(string $table, bool $showField = false, bool $treatAsHackAttempt = false)
     {
@@ -26,12 +26,8 @@ class XidWithTrashed extends Rule
 
     /**
      * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

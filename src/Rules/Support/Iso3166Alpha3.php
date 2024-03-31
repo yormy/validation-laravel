@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 //declare(strict_types = 1);
 
 namespace Yormy\ValidationLaravel\Rules\Support;
@@ -8,8 +10,7 @@ class Iso3166Alpha3
 {
     /**
      * Array of countries with their ISO 3166-1 alpha-3 codes.
-     *
-     **/
+     */
     public static $codes = [
         'ABW' => 'Aruba',
         'AFG' => 'Afghanistan',

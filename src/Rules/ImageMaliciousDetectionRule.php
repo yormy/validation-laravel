@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel\Rules;
 
 class ImageMaliciousDetectionRule extends Rule
@@ -23,13 +25,9 @@ class ImageMaliciousDetectionRule extends Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
-     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
-    public function passes($attribute, $value)
+    public function passes(string $attribute, mixed $value): bool
     {
         if (! request()->hasFile($attribute)) {
             return true;

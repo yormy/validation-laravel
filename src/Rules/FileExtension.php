@@ -1,26 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Illuminate\Support\Facades\Validator;
 
 class FileExtension implements Rule
 {
-    /**
-     * @var array
-     */
-    private $extensions;
+    private array $extensions;
 
-    /**
-     * @var bool
-     */
-    private $mimeTypePasses;
+    private bool $mimeTypePasses;
 
-    /**
-     * @var bool
-     */
-    private $extensionPasses;
+    private bool $extensionPasses;
 
     /**
      * FileExtension constructor.
@@ -30,12 +22,7 @@ class FileExtension implements Rule
         $this->extensions = $extensions;
     }
 
-    /**
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
-     */
-    public function passes($attribute, $value)
+    public function passes(string $attribute, mixed $value): bool
     {
         return false;
         //        $mimeTypeValidator = Validator::make(['image' => $value], ['image' => 'mimes:' . $this->getMimeString()]);
@@ -47,10 +34,8 @@ class FileExtension implements Rule
 
     /**
      * Get the validation error message.
-     *
-     * @return string
      */
-    public function message()
+    public function message(): string
     {
         return 'todo invalid';
         //        if (!$this->extensionPasses) {

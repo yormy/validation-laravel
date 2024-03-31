@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel;
 
 use Illuminate\Support\Facades\Route;
@@ -8,7 +10,7 @@ use Yormy\ValidationLaravel\Providers\EventServiceProvider;
 
 class ValidationLaravelServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->publish();
 
@@ -21,10 +23,32 @@ class ValidationLaravelServiceProvider extends ServiceProvider
         $this->registerAdminRoutes();
     }
 
+    public function registerTranslations(): void
+    {
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'validation');
+    }
+
+    public function register(): void
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/validation-laravel.php', 'validation-laravel');
+        $this->app->register(EventServiceProvider::class);
+    }
+
+    public static function migrationFileExists(string $migrationFileName): bool
+    {
+        $len = strlen($migrationFileName);
+        foreach (glob(database_path('migrations/*.php')) as $filename) {
+            if ((substr($filename, -$len) === $migrationFileName)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private function publish(): void
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
                 __DIR__.'/../config/validation-laravel.php' => config_path('validation-laravel.php'),
             ], 'config');
@@ -37,7 +61,7 @@ class ValidationLaravelServiceProvider extends ServiceProvider
         }
     }
 
-    private function publishMigrations()
+    private function publishMigrations(): void
     {
         $migrations = [
             'create_referral_actions_table.php',
@@ -63,34 +87,23 @@ class ValidationLaravelServiceProvider extends ServiceProvider
         }
     }
 
-    public function registerTranslations(): void
-    {
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'validation');
-    }
-
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__.'/../config/validation-laravel.php', 'validation-laravel');
-        $this->app->register(EventServiceProvider::class);
-    }
-
-    private function registerGuestRoutes()
+    private function registerGuestRoutes(): void
     {
     }
 
-    private function registerUserRoutes()
+    private function registerUserRoutes(): void
     {
-        Route::macro('ValidationLaravelUser', function (string $prefix) {
-            Route::prefix($prefix)->name($prefix.'.')->group(function () {
+        Route::macro('ValidationLaravelUser', function (string $prefix): void {
+            Route::prefix($prefix)->name($prefix.'.')->group(function (): void {
                 Route::get('/details', [ReferrerDetailsController::class, 'show'])->name('show');
             });
         });
     }
 
-    private function registerAdminRoutes()
+    private function registerAdminRoutes(): void
     {
-        Route::macro('ValidationLaravelAdmin', function (string $prefix) {
-            Route::prefix($prefix)->name($prefix.'.')->group(function () {
+        Route::macro('ValidationLaravelAdmin', function (string $prefix): void {
+            Route::prefix($prefix)->name($prefix.'.')->group(function (): void {
                 Route::get('/referrers', [ReferrerOverviewController::class, 'index'])->name('overview');
                 Route::get('/referrers/{referrer}', [
                     ReferrerDetailsController::class,
@@ -99,17 +112,5 @@ class ValidationLaravelServiceProvider extends ServiceProvider
                     ->name('showForUser');
             });
         });
-    }
-
-    public static function migrationFileExists(string $migrationFileName): bool
-    {
-        $len = strlen($migrationFileName);
-        foreach (glob(database_path('migrations/*.php')) as $filename) {
-            if ((substr($filename, -$len) === $migrationFileName)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }

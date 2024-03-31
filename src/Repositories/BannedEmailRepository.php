@@ -9,7 +9,7 @@ use Yormy\ValidationLaravel\Models\BannedEmail;
 
 class BannedEmailRepository
 {
-    const CACHE_KEY = 'banned_emails';
+    public const CACHE_KEY = 'banned_emails';
 
     public function __construct(private ?BannedEmail $model = null)
     {
@@ -22,25 +22,22 @@ class BannedEmailRepository
     {
         if (Cache::has('banned-emails')) {
             return Cache::get(self::CACHE_KEY);
-        } else {
-            $data = $this->getAllTokenized();
-            $expirationInSeconds = 60 * 60 * 2;
-            Cache::put(self::CACHE_KEY, $data, $expirationInSeconds);
-
-            return $data;
         }
+        $data = $this->getAllTokenized();
+        $expirationInSeconds = 60 * 60 * 2;
+        Cache::put(self::CACHE_KEY, $data, $expirationInSeconds);
+
+        return $data;
     }
 
     private function getAllTokenized()
     {
         $all = $this->model->all()->pluck('banned');
 
-        $tokenize = '#'.$all->implode('#').'#';
-
-        return $tokenize;
+        return '#'.$all->implode('#').'#';
     }
 
-    private function flush()
+    private function flush(): void
     {
         Cache::forget(self::CACHE_KEY);
     }

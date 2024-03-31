@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel\Rules\Factories;
 
 use DivineOmega\DOFileCachePSR6\CacheItemPool;
@@ -12,10 +14,8 @@ class PasswordExposedCheckerFactory
 {
     /**
      * Creates and returns an instance of PasswordExposedChecker.
-     *
-     * @return PasswordExposedChecker
      */
-    public function instance()
+    public function instance(): PasswordExposedChecker
     {
         $cache = new CacheItemPool();
 
@@ -28,10 +28,8 @@ class PasswordExposedCheckerFactory
 
     /**
      * Gets the directory to store the cache files.
-     *
-     * @return string
      */
-    private function getCacheDirectory()
+    private function getCacheDirectory(): string
     {
         if (function_exists('storage_path')) {
             return storage_path('app/password-exposed-cache/');

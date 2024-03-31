@@ -14,8 +14,7 @@ use Illuminate\Support\Str;
  */
 class Delimited extends Rule
 {
-    /** @var string|array|\Illuminate\Contracts\Validation\Rule */
-    protected $rule;
+    protected string|array|\Illuminate\Contracts\Validation\Rule $rule;
 
     protected $minimum = null;
 
@@ -27,11 +26,9 @@ class Delimited extends Rule
 
     protected $separatedBy = ',';
 
-    /** @var bool */
-    protected $trimItems = true;
+    protected bool $trimItems = true;
 
-    /** @var string */
-    protected $validationMessageWord = 'item';
+    protected string $validationMessageWord = 'item';
 
     public function __construct($rule)
     {
@@ -144,6 +141,11 @@ class Delimited extends Rule
         return true;
     }
 
+    public function message(): string
+    {
+        return $this->message;
+    }
+
     protected function validate(string $attribute, string $item): array
     {
         $attribute = Arr::last(explode('.', $attribute));
@@ -157,10 +159,5 @@ class Delimited extends Rule
             $validator->passes(),
             $validator->getMessageBag()->first($attribute),
         ];
-    }
-
-    public function message(): string
-    {
-        return $this->message;
     }
 }

@@ -24,8 +24,7 @@ class RecordOwner extends Rule
      * The rule requires two parameters:
      * 1. The database table to use.
      * 2. The column on the table to compare the value against.
-     *
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);

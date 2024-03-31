@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use Illuminate\Support\Str;
-use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
-
 use function __;
 use function array_map;
 use function collect;
+use Illuminate\Support\Str;
 use function implode;
 use function sprintf;
+use Yormy\ValidationLaravel\Rules\Exceptions\RuleSetupException;
 
 /**
  * - Contains any : new StringContains())->phrases(['laravel','php',])
@@ -20,17 +19,11 @@ use function sprintf;
  */
 class StringContains extends Rule
 {
-    /** @var array */
-    protected $phrases = [];
+    protected array $phrases = [];
 
-    /** @var bool */
-    protected $mustContainAllPhrases = false;
+    protected bool $mustContainAllPhrases = false;
 
-    /**
-     * @param  string  $attribute
-     * @param  mixed  $value
-     */
-    public function passes($attribute, $value): bool
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

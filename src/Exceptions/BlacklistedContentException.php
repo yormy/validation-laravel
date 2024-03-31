@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel\Exceptions;
 
 use Exception;
@@ -11,6 +13,6 @@ class BlacklistedContentException extends Exception
         //NOTE : This is serious, Best to block the ip immediately
         // todo : throw event
         // todo : for production remove the $value form the feedback
-        parent::__construct("$filename is malicious : $value");
+        parent::__construct("{$filename} is malicious : {$value}");
     }
 }

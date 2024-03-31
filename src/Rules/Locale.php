@@ -8,8 +8,7 @@ class Locale extends Rule
 {
     /**
      * Generate an example value that satisifies the validation rule.
-     *
-     **/
+     */
     public function example(): string
     {
         $allowedLocales = array_keys(config('localization.supportedLocales'));
@@ -19,7 +18,7 @@ class Locale extends Rule
 
     /**
      * Determine if the validation rule passes.
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
@@ -36,14 +35,12 @@ class Locale extends Rule
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
                 'example' => $this->example(),
             ]
         );
-
-        return $message;
     }
 }

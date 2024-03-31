@@ -14,15 +14,9 @@ use Yormy\ValidationLaravel\Rules\Factories\PasswordExposedCheckerFactory;
  */
 class PasswordExposed extends Rule
 {
-    /**
-     * @var PasswordExposedChecker
-     */
-    private $passwordExposedChecker;
+    private PasswordExposedChecker $passwordExposedChecker;
 
-    /**
-     * @var string
-     */
-    private $message = 'The :attribute has been exposed in a data breach.';
+    private string $message = 'The :attribute has been exposed in a data breach.';
 
     /**
      * PasswordExposed constructor.
@@ -39,12 +33,8 @@ class PasswordExposed extends Rule
 
     /**
      * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

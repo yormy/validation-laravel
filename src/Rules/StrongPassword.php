@@ -15,29 +15,19 @@ use function preg_match_all;
  */
 class StrongPassword extends Rule
 {
-    /** @var int */
-    protected $minCharacters = 8;
+    protected int $minCharacters = 8;
 
-    /** @var string */
-    protected $specialCharacters = '!@#$%^&*()\-_=+{};:,<."£~?|>';
+    protected string $specialCharacters = '!@#$%^&*()\-_=+{};:,<."£~?|>';
 
-    /** @var bool */
-    protected $mustIncludeUppercaseCharacters = true;
+    protected bool $mustIncludeUppercaseCharacters = true;
 
-    /** @var bool */
-    protected $mustIncludeLowercaseCharacters = true;
+    protected bool $mustIncludeLowercaseCharacters = true;
 
-    /** @var bool */
-    protected $mustIncludeSpecialCharacters = false;
+    protected bool $mustIncludeSpecialCharacters = false;
 
-    /** @var bool */
-    protected $mustIncludeNumbers = true;
+    protected bool $mustIncludeNumbers = true;
 
-    /**
-     * @param  string  $attribute
-     * @param  mixed  $value
-     */
-    public function passes($attribute, $value): bool
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

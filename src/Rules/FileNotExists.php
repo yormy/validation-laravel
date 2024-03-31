@@ -9,18 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class FileNotExists extends Rule
 {
-    /**
-     * @var string
-     */
-    private $path;
 
-    /**
-     * @var string
-     */
-    private $filename;
+    protected bool $includePrefix = true;
+    private string $path;
 
-    /** @var bool */
-    protected $includePrefix = true;
+    private string $filename;
 
     /**
      * FileExtension constructor.
@@ -32,12 +25,8 @@ class FileNotExists extends Rule
 
     /**
      * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

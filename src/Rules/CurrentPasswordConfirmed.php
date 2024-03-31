@@ -30,13 +30,11 @@ class CurrentPasswordConfirmed extends Rule
     {
         $key = 'validation.'.$this->getMessageKey();
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
             ]
         );
-
-        return $message;
     }
 }

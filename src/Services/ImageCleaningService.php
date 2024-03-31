@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\ValidationLaravel\Services;
 
 use Imagick;
@@ -17,15 +19,15 @@ use Yormy\ValidationLaravel\Exceptions\InvalidValueException;
  */
 class ImageCleaningService
 {
-    const WEBP_BASE64 = 'data:image/webp;base64,';
+    public const WEBP_BASE64 = 'data:image/webp;base64,';
 
-    const JPEG_BASE64 = 'data:image/jpeg;base64,';
+    public const JPEG_BASE64 = 'data:image/jpeg;base64,';
+
+    protected $resolution = null;
 
     private $base64Image;
 
     private $image;
-
-    protected $resolution = null;
 
     public function initBase64(string $base64Image): self
     {
@@ -67,7 +69,7 @@ class ImageCleaningService
         return $this;
     }
 
-    public function resize()
+    public function resize(): void
     {
         if (! $this->image) {
             throw new InvalidImageException('Invalid Image');
@@ -78,7 +80,7 @@ class ImageCleaningService
         } else {
             $originalResolution = $this->image->getImageResolution();
 
-            if ($originalResolution['x'] === 0.0 || $originalResolution['y'] == 0.0) {
+            if ($originalResolution['x'] === 0.0 || $originalResolution['y'] === 0.0) {
                 $resolution = [
                     'x' => 10,
                     'y' => 10,
@@ -119,7 +121,7 @@ class ImageCleaningService
         return self::JPEG_BASE64.base64_encode($imageString);
     }
 
-    private function stripImage()
+    private function stripImage(): void
     {
         $this->image->stripImage();
         $this->image->deleteImageProperty('exif:ExifOffset');

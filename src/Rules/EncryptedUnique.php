@@ -20,7 +20,7 @@ class EncryptedUnique extends Rule
     {
         $this->setAttribute($attribute);
 
-        $existingModel = (new $this->modelClass)->whereEncrypted($this->fieldName, $value)->first();
+        $existingModel = (new $this->modelClass())->whereEncrypted($this->fieldName, $value)->first();
         if ($existingModel) {
             return false;
         }
@@ -33,13 +33,11 @@ class EncryptedUnique extends Rule
         //$key = 'core::validation.unique';
         $key = 'validation.unique';
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
             ]
         );
-
-        return $message;
     }
 }

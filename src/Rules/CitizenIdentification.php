@@ -9,18 +9,13 @@ use Yormy\ValidationLaravel\Rules\Support\Iso3166Alpha3;
 
 class CitizenIdentification extends Rule
 {
-    private function example(): string
-    {
-        return 'xxxxxxxxxxxx';
-    }
 
     /**
      * Determine if the validation rule passes.
      *
      * The rule requires one parameter:
      * 1. The identification type to use ('USA' or 'US, 'GBR' or 'GB', 'FRA' or 'FR', 'BRA' or 'BR').
-     *
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
@@ -49,10 +44,22 @@ class CitizenIdentification extends Rule
         }
     }
 
+    public function message(): string
+    {
+        $key = 'core::validation.'.$this->getMessageKey();
+
+        return _(
+            $key,
+            [
+                'attribute' => $this->getAttribute(),
+                'example' => $this->example(),
+            ]
+        );
+    }
+
     /**
      * Verify whether the given value is a valid French citizen number.
-     *
-     **/
+     */
     protected function verifyFrance($value): bool
     {
         return preg_match(
@@ -63,8 +70,7 @@ class CitizenIdentification extends Rule
 
     /**
      * Verify whether the given value is a valid United Kingdom citizen number.
-     *
-     **/
+     */
     protected function verifyUnitedKingdom($value): bool
     {
         return preg_match('/^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-DFM]{0,1}$/', $value) > 0;
@@ -72,8 +78,7 @@ class CitizenIdentification extends Rule
 
     /**
      * Verify whether the given value is a valid United States citizen number.
-     *
-     **/
+     */
     protected function verifyUnitedStates($value): bool
     {
         return preg_match('/^(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}$/', $value) > 0;
@@ -81,8 +86,7 @@ class CitizenIdentification extends Rule
 
     /**
      * Verify whether the given value is a valid Brazil citizen number.
-     *
-     **/
+     */
     protected function verifyBrazil($value): bool
     {
         $value = preg_replace('/[^0-9]/is', '', $value);
@@ -93,31 +97,20 @@ class CitizenIdentification extends Rule
 
         for ($t = 9; $t < 11; $t += 1) {
             for ($d = 0, $c = 0; $c < $t; $c++) {
-                $d += (int) $value[$c] * (($t + 1) - $c);
+                $d += (int) $value[$c] * ($t + 1 - $c);
             }
 
-            $d = ((10 * $d) % 11) % 10;
+            $d = (10 * $d) % 11 % 10;
 
-            if ((int) $value[$c] != $d) {
+            if ((int) $value[$c] !== $d) {
                 return false;
             }
         }
 
         return false;
     }
-
-    public function message(): string
+    private function example(): string
     {
-        $key = 'core::validation.'.$this->getMessageKey();
-
-        $message = _(
-            $key,
-            [
-                'attribute' => $this->getAttribute(),
-                'example' => $this->example(),
-            ]
-        );
-
-        return $message;
+        return 'xxxxxxxxxxxx';
     }
 }

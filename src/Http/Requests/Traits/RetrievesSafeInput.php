@@ -11,10 +11,8 @@ trait RetrievesSafeInput
 {
     /**
      * Get an element from the validated input.
-     *
-     * @param  string  $key
      */
-    public function __get($key): mixed
+    public function __get(string $key): mixed
     {
         $invalidatedKey = null;
         try {

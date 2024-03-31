@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
 Determine if the user is authorized to perform an ability on an instance of the given model.
 The id of the model is the field under validation
@@ -43,14 +44,11 @@ use Illuminate\Support\Facades\Auth;
  */
 class Authorized extends Rule
 {
-    /** @var string */
-    protected $ability;
+    protected string $ability;
 
-    /** @var array */
-    protected $arguments;
+    protected array $arguments;
 
-    /** @var string */
-    protected $className;
+    protected string $className;
 
     public function __construct(string $ability, string $className)
     {
@@ -84,7 +82,7 @@ class Authorized extends Rule
 
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->attribute,
@@ -92,7 +90,5 @@ class Authorized extends Rule
                 'className' => $classBasename,
             ]
         );
-
-        return $message;
     }
 }

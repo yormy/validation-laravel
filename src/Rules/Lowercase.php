@@ -9,10 +9,7 @@ use function mb_strtolower;
 
 class Lowercase extends Rule
 {
-    /**
-     * @param  string  $attribute
-     */
-    public function passes($attribute, $value): bool
+    public function passes(string $attribute, $value): bool
     {
         $this->setAttribute($attribute);
 

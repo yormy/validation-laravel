@@ -22,13 +22,11 @@ class CustomMessage extends Rule
 
     public function message(): string
     {
-        $message = (string) __(
+        return (string) __(
             $this->errorMessageKey,
             [
                 'attribute' => $this->getAttribute(),
             ]
         );
-
-        return $message;
     }
 }

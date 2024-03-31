@@ -38,8 +38,7 @@ namespace Yormy\ValidationLaravel\Rules;
  */
 class Enum extends Rule
 {
-    /** @var array */
-    protected $validValues;
+    protected array $validValues;
 
     public function __construct(string $enumClass)
     {
@@ -58,14 +57,12 @@ class Enum extends Rule
         $key = 'core::validation.'.$this->getMessageKey();
         $validValues = implode(', ', $this->validValues);
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
                 'validValues' => $validValues,
             ]
         );
-
-        return $message;
     }
 }

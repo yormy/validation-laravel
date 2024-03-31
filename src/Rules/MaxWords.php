@@ -12,8 +12,7 @@ class MaxWords extends Rule
 
     /**
      * Determine if the validation rule passes.
-     *
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
@@ -36,14 +35,12 @@ class MaxWords extends Rule
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
                 'max' => $this->maxWords,
             ]
         );
-
-        return $message;
     }
 }

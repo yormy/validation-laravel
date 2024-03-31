@@ -9,11 +9,7 @@ use function mb_strtoupper;
 
 class Uppercase extends Rule
 {
-    /**
-     * @param  string  $attribute
-     * @param  mixed  $value
-     */
-    public function passes($attribute, $value): bool
+    public function passes(string $attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

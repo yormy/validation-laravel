@@ -16,8 +16,7 @@ class Decimal extends Rule
 
     /**
      * Generate an example value that satisifies the validation rule.
-     *
-     **/
+     */
     public function example(): string
     {
         return mt_rand(1, (int) str_repeat('9', $this->integer)).'.'.
@@ -30,8 +29,7 @@ class Decimal extends Rule
      * The rule has two parameters:
      * 1. The maximum number of digits before the decimal point.
      * 2. The maximum number of digits after the decimal point.
-     *
-     **/
+     */
     public function passes($attribute, $value): bool
     {
         $this->setAttribute($attribute);
@@ -66,14 +64,12 @@ class Decimal extends Rule
     {
         $key = 'core::validation.'.$this->getMessageKey();
 
-        $message = (string) __(
+        return (string) __(
             $key,
             [
                 'attribute' => $this->getAttribute(),
                 'example' => $this->example(),
             ]
         );
-
-        return $message;
     }
 }
