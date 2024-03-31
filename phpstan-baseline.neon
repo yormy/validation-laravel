@@ -1,0 +1,1111 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$query of static method Illuminate\\\\Support\\\\Facades\\\\DB\\:\\:unprepared\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Database/Seeders/BannedSeeder.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\BlacklistedContentException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/BlacklistedContentException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\BlacklistedContentException\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/BlacklistedContentException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\ExtensionInconsistentException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/ExtensionInconsistentException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\ExtensionInvalidException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/ExtensionInvalidException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\GettingNonValidatedRequestException\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/GettingNonValidatedRequestException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\InvalidImageException\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/InvalidImageException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\InvalidValueException\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/InvalidValueException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\MimeInconsistentException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/MimeInconsistentException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\MimeTypeNotAllowedException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/MimeTypeNotAllowedException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\MimeTypeNotAllowedException\\:\\:__construct\\(\\) has parameter \\$mimetype with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/MimeTypeNotAllowedException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\NullByteFoundException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/NullByteFoundException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\SizeNotAllowedException\\:\\:__construct\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/SizeNotAllowedException.php
+
+		-
+			message: "#^Part \\$maxAllowdSize \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 1
+			path: src/Exceptions/SizeNotAllowedException.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Exceptions\\\\XidNotFoundException\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Exceptions/XidNotFoundException.php
+
+		-
+			message: "#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Cannot access offset string on mixed\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Middleware\\\\UploadValidation\\:\\:canThrowException\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Middleware\\\\UploadValidation\\:\\:getAllowedExtensions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Middleware\\\\UploadValidation\\:\\:handle\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Middleware\\\\UploadValidation\\:\\:handle\\(\\) has parameter \\$request with no type specified\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, mixed given\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Parameter \\#2 \\$haystack of function in_array expects array, mixed given\\.$#"
+			count: 2
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Parameter \\#2 \\$needle of function strpos expects string, mixed given\\.$#"
+			count: 1
+			path: src/Http/Middleware/UploadValidation.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\BaseRequest\\:\\:createValidation\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/BaseRequest.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\BaseRequest\\:\\:updateValidation\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/BaseRequest.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, mixed given\\.$#"
+			count: 1
+			path: src/Http/Requests/BaseRequest.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\BaseRequest\\:\\:\\$routeParamsToValidate has no type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/BaseRequest.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of static method Illuminate\\\\Support\\\\Arr\\:\\:get\\(\\) expects array\\|ArrayAccess, mixed given\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRequest.php
+
+		-
+			message: "#^Parameter \\#2 \\$array of function array_key_exists expects array, mixed given\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRequest.php
+
+		-
+			message: "#^Cannot access offset string on mixed\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\FormRouteRequest\\:\\:rules\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\FormRouteRequest\\:\\:validatedItem\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\FormRouteRequest\\:\\:validatedItem\\(\\) has parameter \\$default with no type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of static method Illuminate\\\\Support\\\\Arr\\:\\:get\\(\\) expects array\\|ArrayAccess, mixed given\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Parameter \\#2 \\$array of function array_key_exists expects array, mixed given\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\FormRouteRequest\\:\\:\\$queryParamsToValidate has no type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Http\\\\Requests\\\\FormRouteRequest\\:\\:\\$routeParamsToValidate has no type specified\\.$#"
+			count: 1
+			path: src/Http/Requests/FormRouteRequest.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\BlacklistedContentEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/BlacklistedContentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\BlacklistedContentEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/BlacklistedContentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\BlacklistedContentEvent\\:\\:getMaliciousContent\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/BlacklistedContentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\BlacklistedContentEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/BlacklistedContentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\ExtensionInconsistentEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/ExtensionInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\ExtensionInconsistentEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/ExtensionInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\ExtensionInconsistentEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/ExtensionInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\ExtensionInvalidEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/ExtensionInvalidEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\ExtensionInvalidEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/ExtensionInvalidEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\ExtensionInvalidEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/ExtensionInvalidEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeInconsistentEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeInconsistentEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeInconsistentEvent\\:\\:getMimeType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeInconsistentEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeInconsistentEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeNotAllowedEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeNotAllowedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeNotAllowedEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeNotAllowedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeNotAllowedEvent\\:\\:getMimeType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeNotAllowedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\MimeNotAllowedEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/MimeNotAllowedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\NullByteFoundEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/NullByteFoundEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\NullByteFoundEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/NullByteFoundEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\NullByteFoundEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/NullByteFoundEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\SizeNotAllowedEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/SizeNotAllowedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\SizeNotAllowedEvent\\:\\:getFilename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/SizeNotAllowedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\SizeNotAllowedEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/SizeNotAllowedEvent.php
+
+		-
+			message: "#^Cannot call method ip\\(\\) on mixed\\.$#"
+			count: 1
+			path: src/Observers/Events/XidValidationFailedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\XidValidationFailedEvent\\:\\:getCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/XidValidationFailedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\XidValidationFailedEvent\\:\\:getIp\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/XidValidationFailedEvent.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Observers\\\\Events\\\\XidValidationFailedEvent\\:\\:getSeverity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Observers/Events/XidValidationFailedEvent.php
+
+		-
+			message: "#^Cannot call method all\\(\\) on Yormy\\\\ValidationLaravel\\\\Models\\\\BannedEmail\\|null\\.$#"
+			count: 1
+			path: src/Repositories/BannedEmailRepository.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\BannedEmailRepository\\:\\:flush\\(\\) is unused\\.$#"
+			count: 1
+			path: src/Repositories/BannedEmailRepository.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\BannedEmailRepository\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Repositories/BannedEmailRepository.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\BannedEmailRepository\\:\\:getAllTokenized\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Repositories/BannedEmailRepository.php
+
+		-
+			message: "#^Call to method can\\(\\) on an unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Authenticatable\\.$#"
+			count: 1
+			path: src/Rules/Authorized.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/Authorized.php
+
+		-
+			message: "#^PHPDoc tag @var contains unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Authenticatable\\.$#"
+			count: 1
+			path: src/Rules/Authorized.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function base64_decode expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Base64Encoded.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\BaseValidationRule\\:\\:\\$exception is never read, only written\\.$#"
+			count: 1
+			path: src/Rules/BaseValidationRule.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/BlacklistedEmailRule.php
+
+		-
+			message: "#^Function _ invoked with 2 parameters, 1 required\\.$#"
+			count: 1
+			path: src/Rules/CitizenIdentification.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\CitizenIdentification\\:\\:verifyBrazil\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Rules/CitizenIdentification.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\CitizenIdentification\\:\\:verifyFrance\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Rules/CitizenIdentification.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\CitizenIdentification\\:\\:verifyUnitedKingdom\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Rules/CitizenIdentification.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\CitizenIdentification\\:\\:verifyUnitedStates\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Rules/CitizenIdentification.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Coordinate.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/CountryCode.php
+
+		-
+			message: "#^PHPDoc tag @param references unknown parameter\\: \\$phrases$#"
+			count: 1
+			path: src/Rules/CountryCode.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function strtoupper expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/CountryCode.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\CountryCode\\:\\:\\$iso has no type specified\\.$#"
+			count: 1
+			path: src/Rules/CountryCode.php
+
+		-
+			message: "#^Variable \\$array might not be defined\\.$#"
+			count: 1
+			path: src/Rules/CountryCode.php
+
+		-
+			message: "#^Variable \\$iso might not be defined\\.$#"
+			count: 1
+			path: src/Rules/CountryCode.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/CurrentPasswordConfirmed.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\CurrentPasswordConfirmed\\:\\:__construct\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: src/Rules/CurrentPasswordConfirmed.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Support\\\\Facades\\\\Hash\\:\\:check\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/CurrentPasswordConfirmed.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\CurrentPasswordConfirmed\\:\\:\\$user has no type specified\\.$#"
+			count: 1
+			path: src/Rules/CurrentPasswordConfirmed.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/CustomMessage.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\CustomMessage\\:\\:\\$errorMessageKey has no type specified\\.$#"
+			count: 1
+			path: src/Rules/CustomMessage.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/Decimal.php
+
+		-
+			message: "#^PHPDoc tag @param references unknown parameter\\: \\$phrases$#"
+			count: 2
+			path: src/Rules/Decimal.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Decimal.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Decimal\\:\\:\\$fractal has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Decimal.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Decimal\\:\\:\\$integer has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Decimal.php
+
+		-
+			message: "#^Call to method getMessageBag\\(\\) on an unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Illuminate\\\\Contracts\\\\Validation\\\\Validator\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Call to method passes\\(\\) on an unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Illuminate\\\\Contracts\\\\Validation\\\\Validator\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:__construct\\(\\) has parameter \\$rule with no type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:allowDuplicates\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:doNotTrimItems\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:max\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:min\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:separatedBy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:validationMessageWord\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$validator contains unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Illuminate\\\\Contracts\\\\Validation\\\\Validator\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function trim expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:\\$allowDuplicates has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:\\$maximum has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:\\$message has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:\\$minimum has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Delimited\\:\\:\\$separatedBy has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Delimited.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Domain.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/DomainRestrictedEmail.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/DomainRestrictedEmail.php
+
+		-
+			message: "#^Call to an undefined static method Yormy\\\\ValidationLaravel\\\\Facades\\\\BannedEmail\\:\\:isBanned\\(\\)\\.$#"
+			count: 1
+			path: src/Rules/EmailNotBanned.php
+
+		-
+			message: "#^Parameter \\#1 \\$ of closure expects string, array\\|string\\|null given\\.$#"
+			count: 1
+			path: src/Rules/EmailNotBanned.php
+
+		-
+			message: "#^Call to method passes\\(\\) on an unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Illuminate\\\\Contracts\\\\Validation\\\\Validator\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Class Illuminate\\\\Http\\\\UploadedFile constructor invoked with 6 parameters, 2\\-5 required\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$validator contains unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Illuminate\\\\Contracts\\\\Validation\\\\Validator\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fwrite expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function stream_get_meta_data expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function base64_decode expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\EncodedImage\\:\\:\\$file has no type specified\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\EncodedImage\\:\\:\\$parameters has no type specified\\.$#"
+			count: 1
+			path: src/Rules/EncodedImage.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:whereEncrypted\\(\\)\\.$#"
+			count: 1
+			path: src/Rules/EncryptedUnique.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/EncryptedUnique.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/Enum.php
+
+		-
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 1
+			path: src/Rules/EvenNumber.php
+
+		-
+			message: "#^Cannot cast mixed to string\\.$#"
+			count: 1
+			path: src/Rules/ExcludesHtml.php
+
+		-
+			message: "#^Call to method changeConfig\\(\\) on an unknown class DivineOmega\\\\DOFileCachePSR6\\\\CacheItemPool\\.$#"
+			count: 1
+			path: src/Rules/Factories/PasswordExposedCheckerFactory.php
+
+		-
+			message: "#^Instantiated class DivineOmega\\\\DOFileCachePSR6\\\\CacheItemPool not found\\.$#"
+			count: 1
+			path: src/Rules/Factories/PasswordExposedCheckerFactory.php
+
+		-
+			message: "#^Instantiated class DivineOmega\\\\PasswordExposed\\\\PasswordExposedChecker not found\\.$#"
+			count: 1
+			path: src/Rules/Factories/PasswordExposedCheckerFactory.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Factories\\\\PasswordExposedCheckerFactory\\:\\:instance\\(\\) has invalid return type DivineOmega\\\\PasswordExposed\\\\PasswordExposedChecker\\.$#"
+			count: 1
+			path: src/Rules/Factories/PasswordExposedCheckerFactory.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\FileExtension\\:\\:getExtensionMessage\\(\\) is unused\\.$#"
+			count: 1
+			path: src/Rules/FileExtension.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\FileExtension\\:\\:getMimeString\\(\\) is unused\\.$#"
+			count: 1
+			path: src/Rules/FileExtension.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\FileExtension\\:\\:\\$extensionPasses is unused\\.$#"
+			count: 1
+			path: src/Rules/FileExtension.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\FileExtension\\:\\:\\$mimeTypePasses is unused\\.$#"
+			count: 1
+			path: src/Rules/FileExtension.php
+
+		-
+			message: "#^Binary operation \"\\.\" between non\\-falsy\\-string and array\\|string\\|null results in an error\\.$#"
+			count: 1
+			path: src/Rules/FileNotExists.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/FileNotExists.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/HashSHA512.php
+
+		-
+			message: "#^Binary operation \"\\.\" between non\\-falsy\\-string and array\\|string\\|null results in an error\\.$#"
+			count: 1
+			path: src/Rules/HexColorCode.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/HexColorCode.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of static method Illuminate\\\\Support\\\\Str\\:\\:startsWith\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/HexColorCode.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/HexColorCode.php
+
+		-
+			message: "#^Cannot call method file\\(\\) on mixed\\.$#"
+			count: 1
+			path: src/Rules/ImageMaliciousDetectionRule.php
+
+		-
+			message: "#^Cannot call method hasFile\\(\\) on mixed\\.$#"
+			count: 1
+			path: src/Rules/ImageMaliciousDetectionRule.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\ImageMaliciousDetectionRule\\:\\:\\$malicious_keywords has no type specified\\.$#"
+			count: 1
+			path: src/Rules/ImageMaliciousDetectionRule.php
+
+		-
+			message: "#^Cannot cast mixed to string\\.$#"
+			count: 1
+			path: src/Rules/IncludesHtml.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Isbn.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/LanguageCode.php
+
+		-
+			message: "#^PHPDoc tag @param references unknown parameter\\: \\$phrases$#"
+			count: 1
+			path: src/Rules/LanguageCode.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function strtoupper expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/LanguageCode.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\LanguageCode\\:\\:\\$iso has no type specified\\.$#"
+			count: 1
+			path: src/Rules/LanguageCode.php
+
+		-
+			message: "#^Variable \\$array might not be defined\\.$#"
+			count: 1
+			path: src/Rules/LanguageCode.php
+
+		-
+			message: "#^Variable \\$iso might not be defined\\.$#"
+			count: 1
+			path: src/Rules/LanguageCode.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/Locale.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, mixed given\\.$#"
+			count: 2
+			path: src/Rules/Locale.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/MacAddress.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/MaxWords.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			count: 1
+			path: src/Rules/MaxWords.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_split expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/MaxWords.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\MaxWords\\:\\:\\$maxWords has no type specified\\.$#"
+			count: 1
+			path: src/Rules/MaxWords.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\MissingInDb\\:\\:\\$column has no type specified\\.$#"
+			count: 1
+			path: src/Rules/MissingInDb.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\MissingInDb\\:\\:\\$table has no type specified\\.$#"
+			count: 1
+			path: src/Rules/MissingInDb.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/ModelsExist.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_filter expects array, mixed given\\.$#"
+			count: 1
+			path: src/Rules/ModelsExist.php
+
+		-
+			message: "#^Regex pattern is invalid\\: Compilation failed\\: invalid range in character class at offset 13 in pattern\\: /\\^\\[\\\\s\\\\pL\\\\pM\\\\pN\\-\\!\\#@\\$%%\\^&\\*\\(\\)_\\+\\|~\\=`\\{\\}\\\\\\[\\\\\\]\\\\\\:\";'\\<\\>\\?,\\.\\\\/\\]\\+\\$/u$#"
+			count: 1
+			path: src/Rules/NameWithSymbols.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/NoWhitespace.php
+
+		-
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 1
+			path: src/Rules/OddNumber.php
+
+		-
+			message: "#^Access to constant EXPOSED on an unknown class DivineOmega\\\\PasswordExposed\\\\Enums\\\\PasswordStatus\\.$#"
+			count: 1
+			path: src/Rules/PasswordExposed.php
+
+		-
+			message: "#^Call to method passwordExposed\\(\\) on an unknown class DivineOmega\\\\PasswordExposed\\\\PasswordExposedChecker\\.$#"
+			count: 1
+			path: src/Rules/PasswordExposed.php
+
+		-
+			message: "#^Parameter \\$passwordExposedChecker of method Yormy\\\\ValidationLaravel\\\\Rules\\\\PasswordExposed\\:\\:__construct\\(\\) has invalid type DivineOmega\\\\PasswordExposed\\\\PasswordExposedChecker\\.$#"
+			count: 1
+			path: src/Rules/PasswordExposed.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\PasswordExposed\\:\\:\\$message is never read, only written\\.$#"
+			count: 1
+			path: src/Rules/PasswordExposed.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\PasswordExposed\\:\\:\\$passwordExposedChecker has unknown class DivineOmega\\\\PasswordExposed\\\\PasswordExposedChecker as its type\\.$#"
+			count: 1
+			path: src/Rules/PasswordExposed.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/Phone.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Phone\\:\\:isE123\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: src/Rules/Phone.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Yormy\\\\ValidationLaravel\\\\Rules\\\\Phone\\:\\:isE164\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Phone.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Yormy\\\\ValidationLaravel\\\\Rules\\\\Phone\\:\\:isNANP\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Phone.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Yormy\\\\ValidationLaravel\\\\Rules\\\\Phone\\:\\:isPhone\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Phone.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Phone\\:\\:\\$format has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Phone.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/RecordOwner.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\RecordOwner\\:\\:\\$column has no type specified\\.$#"
+			count: 1
+			path: src/Rules/RecordOwner.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\RecordOwner\\:\\:\\$table has no type specified\\.$#"
+			count: 1
+			path: src/Rules/RecordOwner.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/Rule.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/StringContains.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of static method Illuminate\\\\Support\\\\Str\\:\\:contains\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/StringContains.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of static method Illuminate\\\\Support\\\\Str\\:\\:containsAll\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/StringContains.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 1
+			path: src/Rules/StringNotContains.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/StringNotContains.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\StringNotContains\\:\\:\\$phrases has no type specified\\.$#"
+			count: 1
+			path: src/Rules/StringNotContains.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 6
+			path: src/Rules/StrongPassword.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function mb_strlen expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/StrongPassword.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match_all expects string, mixed given\\.$#"
+			count: 4
+			path: src/Rules/StrongPassword.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Support\\\\Iso3166Alpha2\\:\\:\\$codes has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Support/Iso3166Alpha2.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Support\\\\Iso3166Alpha3\\:\\:\\$codes has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Support/Iso3166Alpha3.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Support\\\\Iso6391Alpha2\\:\\:\\$codes has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Support/Iso6391Alpha2.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Support\\\\Iso6391Alpha3\\:\\:\\$codes has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Support/Iso6391Alpha3.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/ValidPrice.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:getTable\\(\\)\\.$#"
+			count: 1
+			path: src/Rules/Xid.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 2
+			path: src/Rules/Xid.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Rules\\\\Xid\\:\\:__construct\\(\\) has parameter \\$model with no type specified\\.$#"
+			count: 1
+			path: src/Rules/Xid.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/Xid.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\Xid\\:\\:\\$errorPrefix has no type specified\\.$#"
+			count: 1
+			path: src/Rules/Xid.php
+
+		-
+			message: "#^Cannot cast array\\|string\\|null to string\\.$#"
+			count: 2
+			path: src/Rules/XidWithTrashed.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function mb_strlen expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/XidWithTrashed.php
+
+		-
+			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, mixed given\\.$#"
+			count: 1
+			path: src/Rules/XidWithTrashed.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Rules\\\\XidWithTrashed\\:\\:\\$errorPrefix has no type specified\\.$#"
+			count: 1
+			path: src/Rules/XidWithTrashed.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Services\\\\ImageCleaningService\\:\\:getBaseJpeg\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Services/ImageCleaningService.php
+
+		-
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Services\\\\ImageCleaningService\\:\\:getBaseWebp\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Services/ImageCleaningService.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Services\\\\ImageCleaningService\\:\\:\\$base64Image has no type specified\\.$#"
+			count: 1
+			path: src/Services/ImageCleaningService.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Services\\\\ImageCleaningService\\:\\:\\$image has no type specified\\.$#"
+			count: 1
+			path: src/Services/ImageCleaningService.php
+
+		-
+			message: "#^Property Yormy\\\\ValidationLaravel\\\\Services\\\\ImageCleaningService\\:\\:\\$resolution has no type specified\\.$#"
+			count: 1
+			path: src/Services/ImageCleaningService.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/ValidationLaravelServiceProvider.php
+
+		-
+			message: "#^Class Yormy\\\\ValidationLaravel\\\\ReferrerDetailsController not found\\.$#"
+			count: 2
+			path: src/ValidationLaravelServiceProvider.php
+
+		-
+			message: "#^Class Yormy\\\\ValidationLaravel\\\\ReferrerOverviewController not found\\.$#"
+			count: 1
+			path: src/ValidationLaravelServiceProvider.php
