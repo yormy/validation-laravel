@@ -19,7 +19,6 @@ class BannedEmailTest extends TestCase
 
     /**
      * @test
-     * @group  xxx
      */
     public function NotBannedDomain(): void
     {
@@ -29,7 +28,6 @@ class BannedEmailTest extends TestCase
 
     /**
      * @test
-     * @group  xxx
      */
     public function NotBannedEmailDomain(): void
     {
@@ -39,7 +37,6 @@ class BannedEmailTest extends TestCase
 
     /**
      * @test
-     * @group  xxx
      */
     public function BannedEmail(): void
     {
