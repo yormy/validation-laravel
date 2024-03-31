@@ -9,7 +9,6 @@ use Yormy\ValidationLaravel\Rules\Support\Iso3166Alpha3;
 
 class CitizenIdentification extends Rule
 {
-
     /**
      * Determine if the validation rule passes.
      *
@@ -109,6 +108,7 @@ class CitizenIdentification extends Rule
 
         return false;
     }
+
     private function example(): string
     {
         return 'xxxxxxxxxxxx';

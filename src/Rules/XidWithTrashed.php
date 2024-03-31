@@ -9,8 +9,8 @@ use Yormy\ValidationLaravel\Exceptions\XidNotFoundException;
 
 class XidWithTrashed extends Rule
 {
-
     protected bool $treatAsHackAttempt;
+
     private bool $showField;
 
     private string $table;

@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Storage;
 
 class FileNotExists extends Rule
 {
-
     protected bool $includePrefix = true;
+
     private string $path;
 
     private string $filename;

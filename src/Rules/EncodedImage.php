@@ -9,10 +9,10 @@ use Illuminate\Support\Str;
 
 class EncodedImage extends Rule
 {
-
     public const WEBP = 'webp';
 
     public const JPEG = 'jpeg';
+
     /**
      * Pointer to the temporary file.
      */
