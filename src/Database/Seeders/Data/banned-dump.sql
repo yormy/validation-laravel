@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `banned_emails`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `banned_emails` (
-  `id` bigint unsigned NOT NULL /*!40101 AUTO_INCREMENT */,,
+  `id` bigint unsigned NOT NULL /*!40101 AUTO_INCREMENT */,
   `banned` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `notes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
