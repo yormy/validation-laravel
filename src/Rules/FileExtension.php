@@ -22,7 +22,7 @@ class FileExtension implements Rule
         $this->extensions = $extensions;
     }
 
-    public function passes(string $attribute, mixed $value): bool
+    public function passes($attribute, mixed $value): bool
     {
         return false;
         //        $mimeTypeValidator = Validator::make(['image' => $value], ['image' => 'mimes:' . $this->getMimeString()]);

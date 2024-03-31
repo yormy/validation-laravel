@@ -24,7 +24,7 @@ class StringContains extends Rule
 
     protected bool $mustContainAllPhrases = false;
 
-    public function passes(string $attribute, mixed $value): bool
+    public function passes($attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

@@ -27,7 +27,7 @@ class ImageMaliciousDetectionRule extends Rule
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
-    public function passes(string $attribute, mixed $value): bool
+    public function passes($attribute, mixed $value): bool
     {
         if (! request()->hasFile($attribute)) {
             return true;

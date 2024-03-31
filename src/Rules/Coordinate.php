@@ -14,7 +14,7 @@ class Coordinate extends Rule
      * Determine if the validation rule passes.
      * Validates a lat/lng co ordinate like "47.1,179.1".
      */
-    public function passes(string $attribute, mixed $value): bool
+    public function passes($attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 

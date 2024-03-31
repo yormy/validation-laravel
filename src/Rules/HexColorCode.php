@@ -21,7 +21,7 @@ class HexColorCode extends Rule
 
     protected bool $includePrefix = true;
 
-    public function passes(string $attribute, mixed $value): bool
+    public function passes($attribute, mixed $value): bool
     {
         $this->setAttribute($attribute);
 
