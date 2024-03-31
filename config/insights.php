@@ -13,6 +13,7 @@ use SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\DisallowEmptySniff;
 use SlevomatCodingStandard\Sniffs\Functions\FunctionLengthSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff;
 
 return [
     'remove' => [
@@ -31,7 +32,7 @@ return [
 
         CyclomaticComplexityIsHigh::class,
         OrderedImportsFixer::class,
-        \SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class
+        UseSpacingSniff::class,
     ],
 
     'config' => [
