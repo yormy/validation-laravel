@@ -30,6 +30,7 @@ abstract class TestCase extends BaseTestCase
             ValidationLaravelServiceProvider::class,
         ];
     }
+
     protected function refreshTestDatabase()
     {
         if (! RefreshDatabaseState::$migrated) {
@@ -38,7 +39,7 @@ abstract class TestCase extends BaseTestCase
             $path = './tests/Setup/Database/Migrations';
 
             $this->loadMigrationsFrom(__DIR__.'/../tests/Setup/Database/Migrations');
-            $this->artisan("migrate");
+            $this->artisan('migrate');
 
             RefreshDatabaseState::$migrated = true;
         }

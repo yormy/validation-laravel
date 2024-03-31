@@ -2,9 +2,6 @@
 
 namespace Yormy\ValidationLaravel\Services;
 
-use Imagick;
-use Yormy\ValidationLaravel\Exceptions\InvalidImageException;
-use Yormy\ValidationLaravel\Exceptions\InvalidValueException;
 use Yormy\ValidationLaravel\Repositories\BannedEmailRepository;
 
 class BannedEmailService
@@ -17,28 +14,29 @@ class BannedEmailService
         $emailDomain = $parts[1];
 
         $tokenizedBanned = $this->getBanned();
-        $tokenizedDomain = '#'. $emailDomain. '#';
-        $tokenizedEmail = '#'. $email. '#';
+        $tokenizedDomain = '#'.$emailDomain.'#';
+        $tokenizedEmail = '#'.$email.'#';
 
-        if(false !== strpos($tokenizedBanned, $tokenizedDomain )) {
+        if (strpos($tokenizedBanned, $tokenizedDomain) !== false) {
             return true;
         }
 
-        if(false !== strpos($tokenizedBanned, $tokenizedEmail )) {
+        if (strpos($tokenizedBanned, $tokenizedEmail) !== false) {
             return true;
         }
 
         return false;
     }
 
-    public function isNotBanned(string $email) : bool
+    public function isNotBanned(string $email): bool
     {
-        return !$this->isBanned($email);
+        return ! $this->isBanned($email);
     }
 
-    private function getBanned() : string
+    private function getBanned(): string
     {
         $bannedEmailRepository = new BannedEmailRepository();
+
         return $bannedEmailRepository->getAll();
     }
 }

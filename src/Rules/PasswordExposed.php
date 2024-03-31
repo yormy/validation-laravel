@@ -27,7 +27,7 @@ class PasswordExposed extends Rule
     /**
      * PasswordExposed constructor.
      */
-    public function __construct(PasswordExposedChecker $passwordExposedChecker = null)
+    public function __construct(?PasswordExposedChecker $passwordExposedChecker = null)
     {
         if (! $passwordExposedChecker) {
             $factory = new PasswordExposedCheckerFactory();

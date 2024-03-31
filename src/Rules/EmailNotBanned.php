@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
@@ -10,7 +12,7 @@ class EmailNotBanned extends BaseValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (BannedEmail::isBanned($value)) {
-            $fail(__('validation::rule.email.banned' ,['attribute' => $attribute, 'value' => $value]));
+            $fail(__('validation::rule.email.banned', ['attribute' => $attribute, 'value' => $value]));
         }
     }
 }

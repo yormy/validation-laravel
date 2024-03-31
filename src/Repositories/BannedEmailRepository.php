@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Repositories;
-
 
 use Illuminate\Support\Facades\Cache;
 use Yormy\ValidationLaravel\Models\BannedEmail;
@@ -12,7 +13,7 @@ class BannedEmailRepository
 
     public function __construct(private ?BannedEmail $model = null)
     {
-        if (!$model) {
+        if (! $model) {
             $this->model = new BannedEmail();
         }
     }
@@ -30,12 +31,11 @@ class BannedEmailRepository
         }
     }
 
-
     private function getAllTokenized()
     {
         $all = $this->model->all()->pluck('banned');
 
-        $tokenize = '#'. $all->implode('#') .'#';
+        $tokenize = '#'.$all->implode('#').'#';
 
         return $tokenize;
     }
@@ -44,5 +44,4 @@ class BannedEmailRepository
     {
         Cache::forget(self::CACHE_KEY);
     }
-
 }

@@ -15,7 +15,7 @@ class Xid extends Rule
 
     private $errorPrefix;
 
-    public function __construct($model, bool $showField = false, Exception $exception = null)
+    public function __construct($model, bool $showField = false, ?Exception $exception = null)
     {
         parent::__construct($exception);
 

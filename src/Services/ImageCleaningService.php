@@ -46,7 +46,7 @@ class ImageCleaningService
 
     public function setResolution(float $x, float $y): self
     {
-        if (0.0 === $x || 0.0 === $y) {
+        if ($x === 0.0 || $y === 0.0) {
             throw new InvalidValueException('Resolution cannot be 0');
         }
 
@@ -133,7 +133,7 @@ class ImageCleaningService
 
     private function validFormat(string $screenshot, string $type): bool
     {
-        if (0 === strpos($screenshot, $type)) {
+        if (strpos($screenshot, $type) === 0) {
             return true;
         }
 

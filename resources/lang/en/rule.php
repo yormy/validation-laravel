@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'email' =>  [
+    'email' => [
         'banned' => 'This email address is not allowed',
     ],
     'accepted' => 'The :attribute must be accepted.',

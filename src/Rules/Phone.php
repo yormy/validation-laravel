@@ -107,8 +107,8 @@ class Phone extends Rule
      * Checks through all validation methods to verify it is in a
      * phone number format of some type
      *
-     * @param  string  $value The phone number to check
-     * @return bool        is it correct format?
+     * @param  string  $value  The phone number to check
+     * @return bool is it correct format?
      */
     protected function isPhone($value)
     {
@@ -138,8 +138,8 @@ class Phone extends Rule
     /**
      * Format example +15555555555
      *
-     * @param  string  $value The phone number to check
-     * @return bool        is it correct format?
+     * @param  string  $value  The phone number to check
+     * @return bool is it correct format?
      */
     protected function isE164($value)
     {
@@ -156,8 +156,8 @@ class Phone extends Rule
      * Format examples: (555) 555-5555, 1 (555) 555-5555, 1-555-555-5555, 555-555-5555, 1 555 555-5555
      * https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers#United_States.2C_Canada.2C_and_other_NANP_countries
      *
-     * @param  string  $value The phone number to check
-     * @return bool        is it correct format?
+     * @param  string  $value  The phone number to check
+     * @return bool is it correct format?
      */
     protected function isNANP($value)
     {

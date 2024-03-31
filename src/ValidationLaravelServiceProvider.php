@@ -29,7 +29,6 @@ class ValidationLaravelServiceProvider extends ServiceProvider
                 __DIR__.'/../config/validation-laravel.php' => config_path('validation-laravel.php'),
             ], 'config');
 
-
             $this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/bedrock-usersv2'),
             ], 'translations');

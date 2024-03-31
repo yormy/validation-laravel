@@ -11,7 +11,6 @@ class Lowercase extends Rule
 {
     /**
      * @param  string  $attribute
-    <?php declare(strict_types = 1);  * @param  mixed  $value
      */
     public function passes($attribute, $value): bool
     {

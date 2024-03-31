@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Rules;
 
-use function __;
-use function class_basename;
 use Exception;
-use function get_called_class;
 use Illuminate\Contracts\Validation\Rule as BaseRule;
 use Illuminate\Support\Str;
+
+use function __;
+use function class_basename;
+use function get_called_class;
 
 abstract class Rule implements BaseRule
 {
@@ -19,7 +20,7 @@ abstract class Rule implements BaseRule
 
     private ?Exception $exception;
 
-    public function __construct(Exception $exception = null)
+    public function __construct(?Exception $exception = null)
     {
         $this->exception = $exception;
     }

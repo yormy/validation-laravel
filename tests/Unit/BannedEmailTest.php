@@ -27,7 +27,6 @@ class BannedEmailTest extends TestCase
         $this->assertFalse($banned);
     }
 
-
     /**
      * @test
      * @group  xxx

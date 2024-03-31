@@ -9,7 +9,7 @@ class BannedSeeder extends Seeder
 {
     public function run(): void
     {
-        $path = __DIR__ . '/Data/banned-dump.sql';
+        $path = __DIR__.'/Data/banned-dump.sql';
         $sql = file_get_contents($path);
         DB::unprepared($sql);
     }
