@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class BannedEmail extends Model
 {
     protected $fillable = [
-        'banned'
+        'banned',
     ];
 }

@@ -5,7 +5,6 @@ namespace Yormy\ValidationLaravel\Tests;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\RefreshDatabaseState;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Yormy\ValidationLaravel\Database\Seeders\ValidationMainSeeder;
 use Yormy\ValidationLaravel\Models\BannedEmail;
 use Yormy\ValidationLaravel\ValidationLaravelServiceProvider;
 
