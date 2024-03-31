@@ -29,16 +29,17 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>
         <ini name="memory_limit" value="2048M"/>
-        <env name="DB_CONNECTION" value="mysql"/>
-<!--        <env name="DB_DATABASE" value="mexion_testbench"/>-->
-<!--        <env name="DB_USERNAME" value="root"/>-->
-<!--        <env name="DB_PASSWORD" value="somelongpassword332211"/>-->
-        <env name="DB_DATABASE" value="testdb"/>
-        <env name="DB_USERNAME" value="root"/>
-        <env name="DB_PASSWORD" value="testrootpass"/>
-<!--        <env name="DB_HOST" value="mysql"/>-->
+        <!--    <env name="DB_CONNECTION" value="mysql"/>-->
+        <!--    <env name="DB_DATABASE" value="mexion_testbench"/>-->
+        <env name="DB_HOST" value="mysql"/>
         <env name="DB_POST" value="3306"/>
+        <env name="DB_USERNAME" value="root"/>
+        <env name="DB_PASSWORD" value="somelongpassword332211"/>
+        <!--                <env name="DB_USERNAME" value="root"/>-->
+        <!--                <env name="DB_PASSWORD" value="secret"/>-->
     </php>
     <source>
         <include>
