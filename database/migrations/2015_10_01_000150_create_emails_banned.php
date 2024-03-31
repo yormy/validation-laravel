@@ -13,7 +13,7 @@ return new class extends Migration
         Schema::create('banned_emails', function (Blueprint $table) {
             $table->id('id');
             $table->string('banned');
-            $table->string('source');
+            $table->string('source')->nullable();
             $table->string('notes')->nullable();
 
             $table->timestamps();

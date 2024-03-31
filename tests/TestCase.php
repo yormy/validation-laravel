@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\RefreshDatabaseState;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Yormy\ValidationLaravel\Database\Seeders\ValidationMainSeeder;
+use Yormy\ValidationLaravel\Models\BannedEmail;
 use Yormy\ValidationLaravel\ValidationLaravelServiceProvider;
 
 abstract class TestCase extends BaseTestCase
@@ -21,7 +22,8 @@ abstract class TestCase extends BaseTestCase
 
     private function seeder()
     {
-        (new ValidationMainSeeder())->run();
+        BannedEmail::create(['banned' => 'web-ideal.fr']);
+        BannedEmail::create(['banned' => 'test@example.com']);
     }
 
     protected function getPackageProviders($app)
