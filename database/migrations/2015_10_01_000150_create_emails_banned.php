@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('source')->nullable();
             $table->string('notes')->nullable();
 
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 };
