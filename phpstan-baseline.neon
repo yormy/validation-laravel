@@ -338,22 +338,22 @@ parameters:
 		-
 			message: "#^Cannot call method all\\(\\) on Yormy\\\\ValidationLaravel\\\\Models\\\\BannedEmail\\|null\\.$#"
 			count: 1
-			path: src/Repositories/BannedEmailRepository.php
+			path: src/Repositories/DisposableEmailRepository.php
 
 		-
-			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\BannedEmailRepository\\:\\:flush\\(\\) is unused\\.$#"
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\DisposableEmailRepository\\:\\:flush\\(\\) is unused\\.$#"
 			count: 1
-			path: src/Repositories/BannedEmailRepository.php
+			path: src/Repositories/DisposableEmailRepository.php
 
 		-
-			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\BannedEmailRepository\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\DisposableEmailRepository\\:\\:getAll\\(\\) has no return type specified\\.$#"
 			count: 1
-			path: src/Repositories/BannedEmailRepository.php
+			path: src/Repositories/DisposableEmailRepository.php
 
 		-
-			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\BannedEmailRepository\\:\\:getAllTokenized\\(\\) has no return type specified\\.$#"
+			message: "#^Method Yormy\\\\ValidationLaravel\\\\Repositories\\\\DisposableEmailRepository\\:\\:getAllTokenized\\(\\) has no return type specified\\.$#"
 			count: 1
-			path: src/Repositories/BannedEmailRepository.php
+			path: src/Repositories/DisposableEmailRepository.php
 
 		-
 			message: "#^Call to method can\\(\\) on an unknown class Yormy\\\\ValidationLaravel\\\\Rules\\\\Authenticatable\\.$#"

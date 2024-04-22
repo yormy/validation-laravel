@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Yormy\ValidationLaravel\Services;
 
-use Yormy\ValidationLaravel\Repositories\BannedEmailRepository;
+use Yormy\ValidationLaravel\Repositories\DisposableEmailRepository;
 
-class BannedEmailService
+class DisposableEmailService
 {
     public function isBanned(string $email): bool
     {
@@ -37,8 +37,8 @@ class BannedEmailService
 
     private function getBanned(): string
     {
-        $bannedEmailRepository = new BannedEmailRepository();
+        $DisposableEmailRepository = new DisposableEmailRepository();
 
-        return $bannedEmailRepository->getAll();
+        return $DisposableEmailRepository->getAll();
     }
 }

@@ -6,8 +6,10 @@ namespace Yormy\ValidationLaravel\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BannedEmail extends Model
+class DisposableEmail extends Model
 {
+    protected $table ='system_emails_disposables';
+
     protected $fillable = [
         'banned',
     ];

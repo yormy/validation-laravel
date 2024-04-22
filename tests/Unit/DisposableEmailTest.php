@@ -2,10 +2,10 @@
 
 namespace Yormy\ValidationLaravel\Tests\Unit;
 
-use Yormy\ValidationLaravel\Facades\BannedEmail;
+use Yormy\ValidationLaravel\Facades\DisposableEmail;
 use Yormy\ValidationLaravel\Tests\TestCase;
 
-class BannedEmailTest extends TestCase
+class DisposableEmailTest extends TestCase
 {
     /**
      * @test
@@ -13,7 +13,7 @@ class BannedEmailTest extends TestCase
      */
     public function BannedDomain(): void
     {
-        $banned = BannedEmail::isBanned('hello@web-ideal.fr');
+        $banned = DisposableEmail::isBanned('hello@web-ideal.fr');
         $this->assertTrue($banned);
     }
 
@@ -22,7 +22,7 @@ class BannedEmailTest extends TestCase
      */
     public function NotBannedDomain(): void
     {
-        $banned = BannedEmail::isBanned('hello@web12312312-ideal.fr');
+        $banned = DisposableEmail::isBanned('hello@web12312312-ideal.fr');
         $this->assertFalse($banned);
     }
 
@@ -31,7 +31,7 @@ class BannedEmailTest extends TestCase
      */
     public function NotBannedEmailDomain(): void
     {
-        $banned = BannedEmail::isBanned('eewrwe@example.com');
+        $banned = DisposableEmail::isBanned('eewrwe@example.com');
         $this->assertFalse($banned);
     }
 
@@ -40,7 +40,7 @@ class BannedEmailTest extends TestCase
      */
     public function BannedEmail(): void
     {
-        $banned = BannedEmail::isBanned('test@example.com');
+        $banned = DisposableEmail::isBanned('test@example.com');
         $this->assertTrue($banned);
     }
 }

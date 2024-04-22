@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Yormy\ValidationLaravel\Repositories;
 
 use Illuminate\Support\Facades\Cache;
-use Yormy\ValidationLaravel\Models\BannedEmail;
+use Yormy\ValidationLaravel\Models\DisposableEmail;
 
-class BannedEmailRepository
+class DisposableEmailRepository
 {
     public const CACHE_KEY = 'banned_emails';
 
-    public function __construct(private ?BannedEmail $model = null)
+    public function __construct(private ?DisposableEmail $model = null)
     {
         if (! $model) {
-            $this->model = new BannedEmail();
+            $this->model = new DisposableEmail();
         }
     }
 
