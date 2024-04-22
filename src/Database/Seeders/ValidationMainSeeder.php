@@ -10,6 +10,6 @@ class ValidationMainSeeder extends Seeder
 {
     public function run(): void
     {
-        (new BannedEmailsTableSeeder())->run();
+        (new SystemEmailsDisposablesTableSeeder())->run();
     }
 }
