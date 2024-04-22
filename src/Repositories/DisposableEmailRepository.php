@@ -9,7 +9,7 @@ use Yormy\ValidationLaravel\Models\DisposableEmail;
 
 class DisposableEmailRepository
 {
-    public const CACHE_KEY = 'banned_emails';
+    public const CACHE_KEY = 'emails_disposable';
 
     public function __construct(private ?DisposableEmail $model = null)
     {
@@ -20,7 +20,7 @@ class DisposableEmailRepository
 
     public function getAll()
     {
-        if (Cache::has('banned-emails')) {
+        if (Cache::has('emails_disposable')) {
             return Cache::get(self::CACHE_KEY);
         }
         $data = $this->getAllTokenized();
@@ -32,7 +32,7 @@ class DisposableEmailRepository
 
     private function getAllTokenized()
     {
-        $all = $this->model->all()->pluck('banned');
+        $all = $this->model->all()->pluck('domain');
 
         return '#'.$all->implode('#').'#';
     }

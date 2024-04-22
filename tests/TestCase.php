@@ -21,8 +21,8 @@ abstract class TestCase extends BaseTestCase
 
     private function seeder()
     {
-        DisposableEmail::create(['banned' => 'web-ideal.fr']);
-        DisposableEmail::create(['banned' => 'test@example.com']);
+        DisposableEmail::create(['domain' => 'web-ideal.fr']);
+        DisposableEmail::create(['domain' => 'test@example.com']);
     }
 
     protected function getPackageProviders($app)
