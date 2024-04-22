@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('banned_emails', function (Blueprint $table) {
+        Schema::create('system_emails_disposables', function (Blueprint $table) {
             $table->id('id');
             $table->string('banned');
             $table->string('source')->nullable();
