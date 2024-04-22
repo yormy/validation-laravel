@@ -13,7 +13,7 @@ class DisposableEmailTest extends TestCase
      */
     public function BannedDomain(): void
     {
-        $banned = DisposableEmail::isBanned('hello@web-ideal.fr');
+        $banned = DisposableEmail::isDisposable('hello@web-ideal.fr');
         $this->assertTrue($banned);
     }
 
@@ -22,7 +22,7 @@ class DisposableEmailTest extends TestCase
      */
     public function NotBannedDomain(): void
     {
-        $banned = DisposableEmail::isBanned('hello@web12312312-ideal.fr');
+        $banned = DisposableEmail::isDisposable('hello@web12312312-ideal.fr');
         $this->assertFalse($banned);
     }
 
@@ -31,7 +31,7 @@ class DisposableEmailTest extends TestCase
      */
     public function NotBannedEmailDomain(): void
     {
-        $banned = DisposableEmail::isBanned('eewrwe@example.com');
+        $banned = DisposableEmail::isDisposable('eewrwe@example.com');
         $this->assertFalse($banned);
     }
 
@@ -40,7 +40,7 @@ class DisposableEmailTest extends TestCase
      */
     public function BannedEmail(): void
     {
-        $banned = DisposableEmail::isBanned('test@example.com');
+        $banned = DisposableEmail::isDisposable('test@example.com');
         $this->assertTrue($banned);
     }
 }

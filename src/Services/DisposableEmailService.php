@@ -8,7 +8,7 @@ use Yormy\ValidationLaravel\Repositories\DisposableEmailRepository;
 
 class DisposableEmailService
 {
-    public function isBanned(string $email): bool
+    public function isDisposable(string $email): bool
     {
         $email = strtolower($email);
         $parts = explode('@', $email);
@@ -32,7 +32,7 @@ class DisposableEmailService
 
     public function isNotBanned(string $email): bool
     {
-        return ! $this->isBanned($email);
+        return ! $this->isDisposable($email);
     }
 
     private function getBanned(): string
