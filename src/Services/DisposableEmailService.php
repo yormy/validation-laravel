@@ -12,30 +12,30 @@ class DisposableEmailService
     {
         $email = strtolower($email);
         $parts = explode('@', $email);
-        $emailUSer = $parts[0];
+        $emailUser = $parts[0];
         $emailDomain = $parts[1];
 
-        $tokenizedBanned = $this->getBanned();
+        $tokenizedDisposable = $this->getDisposable();
         $tokenizedDomain = '#'.$emailDomain.'#';
         $tokenizedEmail = '#'.$email.'#';
 
-        if (strpos($tokenizedBanned, $tokenizedDomain) !== false) {
+        if (strpos($tokenizedDisposable, $tokenizedDomain) !== false) {
             return true;
         }
 
-        if (strpos($tokenizedBanned, $tokenizedEmail) !== false) {
+        if (strpos($tokenizedDisposable, $tokenizedEmail) !== false) {
             return true;
         }
 
         return false;
     }
 
-    public function isNotBanned(string $email): bool
+    public function isNotDisposable(string $email): bool
     {
         return ! $this->isDisposable($email);
     }
 
-    private function getBanned(): string
+    private function getDisposable(): string
     {
         $DisposableEmailRepository = new DisposableEmailRepository();
 

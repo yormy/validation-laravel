@@ -7,11 +7,11 @@ namespace Yormy\ValidationLaravel\Rules;
 use Closure;
 use Yormy\ValidationLaravel\Facades\DisposableEmail;
 
-class EmailNotBanned extends BaseValidationRule
+class EmailNotDisposable extends BaseValidationRule
 {
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (DisposableEmail::isBanned($value)) {
+        if (DisposableEmail::isDisposable($value)) {
             $fail(__('validation::rule.email.banned', ['attribute' => $attribute, 'value' => $value]));
         }
     }

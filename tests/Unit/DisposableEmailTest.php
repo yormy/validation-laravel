@@ -11,36 +11,36 @@ class DisposableEmailTest extends TestCase
      * @test
      * @group  xxx
      */
-    public function BannedDomain(): void
+    public function DisposableDomain(): void
     {
-        $banned = DisposableEmail::isDisposable('hello@web-ideal.fr');
-        $this->assertTrue($banned);
+        $disposable = DisposableEmail::isDisposable('hello@web-ideal.fr');
+        $this->assertTrue($disposable);
     }
 
     /**
      * @test
      */
-    public function NotBannedDomain(): void
+    public function NotDisposableDomain(): void
     {
-        $banned = DisposableEmail::isDisposable('hello@web12312312-ideal.fr');
-        $this->assertFalse($banned);
+        $disposable = DisposableEmail::isDisposable('hello@web12312312-ideal.fr');
+        $this->assertFalse($disposable);
     }
 
     /**
      * @test
      */
-    public function NotBannedEmailDomain(): void
+    public function NotDisposableEmailDomain(): void
     {
-        $banned = DisposableEmail::isDisposable('eewrwe@example.com');
-        $this->assertFalse($banned);
+        $disposable = DisposableEmail::isDisposable('eewrwe@example.com');
+        $this->assertFalse($disposable);
     }
 
     /**
      * @test
      */
-    public function BannedEmail(): void
+    public function DisposableEmail(): void
     {
-        $banned = DisposableEmail::isDisposable('test@example.com');
-        $this->assertTrue($banned);
+        $disposable = DisposableEmail::isDisposable('test@example.com');
+        $this->assertTrue($disposable);
     }
 }
