@@ -13,7 +13,7 @@ class DisposableEmailTest extends TestCase
      */
     public function DisposableDomain(): void
     {
-        $disposable = DisposableEmail::isDisposable('hello@web-ideal.fr');
+        $disposable = DisposableEmail::isDisposable('hello@disposable-domain.com');
         $this->assertTrue($disposable);
     }
 
@@ -40,7 +40,7 @@ class DisposableEmailTest extends TestCase
      */
     public function DisposableEmail(): void
     {
-        $disposable = DisposableEmail::isDisposable('test@example.com');
+        $disposable = DisposableEmail::isDisposable('email@disposable-email.com');
         $this->assertTrue($disposable);
     }
 }
