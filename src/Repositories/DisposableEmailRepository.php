@@ -32,7 +32,7 @@ class DisposableEmailRepository
 
     private function getAllTokenized()
     {
-        $all = $this->model->all()->pluck('domain');
+        $all = $this->model->all()->pluck('email');
 
         return '#'.$all->implode('#').'#';
     }

@@ -12,7 +12,7 @@ return new class extends Migration
     {
         Schema::create('system_emails_disposables', function (Blueprint $table) {
             $table->id('id');
-            $table->string('domain');
+            $table->string('email');
             $table->string('source')->nullable();
             $table->string('notes')->nullable();
 

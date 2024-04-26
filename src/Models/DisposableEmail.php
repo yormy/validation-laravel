@@ -11,6 +11,6 @@ class DisposableEmail extends Model
     protected $table ='system_emails_disposables';
 
     protected $fillable = [
-        'domain',
+        'email',
     ];
 }
