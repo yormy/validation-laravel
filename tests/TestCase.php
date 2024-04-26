@@ -5,6 +5,7 @@ namespace Yormy\ValidationLaravel\Tests;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\RefreshDatabaseState;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Yormy\ValidationLaravel\Models\BannedEmail;
 use Yormy\ValidationLaravel\Models\DisposableEmail;
 use Yormy\ValidationLaravel\ValidationLaravelServiceProvider;
 
@@ -23,6 +24,9 @@ abstract class TestCase extends BaseTestCase
     {
         DisposableEmail::create(['domain' => 'web-ideal.fr']);
         DisposableEmail::create(['domain' => 'test@example.com']);
+
+        BannedEmail::create(['email' => 'banned-domain.com']);
+        BannedEmail::create(['email' => 'banned@banned-email.com']);
     }
 
     protected function getPackageProviders($app)
