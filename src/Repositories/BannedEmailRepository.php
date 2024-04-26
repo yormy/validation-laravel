@@ -15,6 +15,19 @@ class BannedEmailRepository
         }
     }
 
+    public function add(string $email, string $notes = null): BannedEmail
+    {
+        return $this->model->create([
+            'email' => $email,
+            'notes' => $notes,
+        ]);
+    }
+
+    public function delete(int $bannedEmailId): void
+    {
+        $this->model->find($bannedEmailId)->delete();
+    }
+
     public function getAll()
     {
         return $this->getAllTokenized();
