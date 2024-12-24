@@ -12,7 +12,7 @@ class EmailNotBanned extends BaseValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (BannedEmail::isBanned($value)) {
-            $fail(__('validation::rule.email.banned', ['attribute' => $attribute, 'value' => $value]));
+            $fail(__('validation::rule.email_address.banned', ['attribute' => $attribute, 'value' => $value]));
         }
     }
 }

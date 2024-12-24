@@ -133,4 +133,8 @@ return [
     'uuid' => 'The :attribute must be a valid UUID.',
 
     'current-password-confirmed' => 'Your current password is incorrect',
+
+    'email_address' => [
+        'banned' => 'This email address is not allowed'
+    ]
 ];
